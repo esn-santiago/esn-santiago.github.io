@@ -523,6 +523,7 @@ import esnLogo from '../assets/esn-santiago-logo.png';
       class="site-footer"
       style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px;padding:56px 0 40px;border-top:2px solid currentColor;"
     >
+      <!-- INFORMACIÓN -->
       <div style="flex:0 0 auto;">
         <strong style="display:block;margin:0 0 12px;font-size:1.1rem;font-weight:900;letter-spacing:.04em;">
           ESN SANTIAGO
@@ -535,8 +536,11 @@ import esnLogo from '../assets/esn-santiago-logo.png';
         </p>
       </div>
 
+      <!-- REDES + LEGAL -->
       <div class="footer-right" style="display:flex;flex-direction:column;align-items:flex-end;gap:28px;">
-        <!-- REDES SOCIALES -->
+        <!-- ==============================
+         REDES SOCIALES
+    =============================== -->
         <nav aria-label="Redes sociales">
           <ul
             style="display:flex;align-items:center;justify-content:flex-end;gap:10px;margin:0;padding:0;list-style:none;"
@@ -549,16 +553,13 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="Flickr — abre en una nueva pestaña"
                 title="Flickr"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='linear-gradient(135deg,#ff0084 50%,#0063dc 50%)';this.style.borderColor='transparent';this.style.color='#fff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='linear-gradient(135deg,#ff0084 50%,#0063dc 50%)';this.style.borderColor='transparent';this.style.color='#fff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  aria-hidden="true"
-                  focusable="false"
-                  fill="currentColor"
-                >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <circle cx="7.5" cy="12" r="3.5"></circle>
                   <circle cx="16.5" cy="12" r="3.5"></circle>
                 </svg>
@@ -573,23 +574,26 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="Instagram — abre en una nueva pestaña"
                 title="Instagram"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)';this.style.borderColor='transparent';this.style.color='#ffffff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)';this.style.borderColor='transparent';this.style.color='#ffffff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
                 <svg
                   viewBox="0 0 24 24"
                   width="22"
                   height="22"
-                  aria-hidden="true"
-                  focusable="false"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.8"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
                 >
                   <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
                   <circle cx="12" cy="12" r="4.1"></circle>
-                  <circle cx="17.5" cy="6.5" r="1.15" fill="currentColor" stroke="none"></circle>
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle>
                 </svg>
               </a>
             </li>
@@ -600,19 +604,22 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 href="mailto:junta@esn-santiago.org"
                 aria-label="Enviar un correo electrónico a junta@esn-santiago.org"
                 title="Email"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='#EA4335';this.style.borderColor='#EA4335';this.style.color='#fff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='#EA4335';this.style.borderColor='#EA4335';this.style.color='#fff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
                 <svg
                   viewBox="0 0 24 24"
                   width="22"
                   height="22"
-                  aria-hidden="true"
-                  focusable="false"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.8"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
                 >
                   <rect x="2.8" y="4.8" width="18.4" height="14.4" rx="2.2"></rect>
                   <path d="M3.5 6.5 12 13l8.5-6.5"></path>
@@ -628,16 +635,13 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="Facebook — abre en una nueva pestaña"
                 title="Facebook"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='#1877F2';this.style.borderColor='#1877F2';this.style.color='#fff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='#1877F2';this.style.borderColor='#1877F2';this.style.color='#fff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  aria-hidden="true"
-                  focusable="false"
-                  fill="currentColor"
-                >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path
                     d="M13.7 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H8v3.1h2.5v8h3.2Z"
                   ></path>
@@ -653,16 +657,13 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="X — abre en una nueva pestaña"
                 title="X"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='#000000';this.style.borderColor='#000000';this.style.color='#ffffff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='#000000';this.style.borderColor='#000000';this.style.color='#ffffff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  aria-hidden="true"
-                  focusable="false"
-                  fill="currentColor"
-                >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path
                     d="M4 4h4.2l4.1 5.5L17 4h3l-6.3 7.2L20.5 20h-4.2l-4.5-6-5.1 6h-3l6.9-7.8L4 4Zm3.4 1.8 9.8 12.4h1.8L9.2 5.8H7.4Z"
                   ></path>
@@ -678,16 +679,13 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="LinkedIn — abre en una nueva pestaña"
                 title="LinkedIn"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='#0A66C2';this.style.borderColor='#0A66C2';this.style.color='#fff';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='#0A66C2';this.style.borderColor='#0A66C2';this.style.color='#fff';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  aria-hidden="true"
-                  focusable="false"
-                  fill="currentColor"
-                >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <rect x="3.5" y="8.5" width="3.4" height="11.5" rx=".3"></rect>
                   <circle cx="5.2" cy="5.2" r="1.7"></circle>
                   <path
@@ -705,16 +703,13 @@ import esnLogo from '../assets/esn-santiago-logo.png';
                 rel="noopener noreferrer"
                 aria-label="TikTok — abre en una nueva pestaña"
                 title="TikTok"
-                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:transform .18s ease,opacity .18s ease,background-color .18s ease;"
+                style="width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;"
+                onmouseover="this.style.background='#010101';this.style.borderColor='#25F4EE';this.style.color='#25F4EE';this.style.transform='translateY(-4px)';this.style.opacity='1'"
+                onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+                onfocus="this.style.background='#010101';this.style.borderColor='#25F4EE';this.style.color='#25F4EE';this.style.opacity='1'"
+                onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
-                  aria-hidden="true"
-                  focusable="false"
-                  fill="currentColor"
-                >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path
                     d="M14.2 3.5h3.1c.3 1.9 1.2 3.4 3.1 4.3v3.2a9 9 0 0 1-3.1-1.2v5.5a5.7 5.7 0 1 1-5.7-5.7c.4 0 .8 0 1.2.1v3.2a2.7 2.7 0 1 0 1.4 2.4V3.5Z"
                   ></path>
@@ -724,36 +719,50 @@ import esnLogo from '../assets/esn-santiago-logo.png';
           </ul>
         </nav>
 
-        <!-- ENLACES LEGALES -->
-        <nav
-          class="footer-legal-links"
-          aria-label="Información legal"
-          style="display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;"
-        >
+        <!-- ==============================
+         ENLACES DEL FOOTER
+    =============================== -->
+        <nav aria-label="Información legal" style="display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;">
           <a
             href="/avisolegal"
-            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;"
+            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;transition:color .2s ease,opacity .2s ease;"
+            onmouseover="this.style.color='#ec008c';this.style.opacity='1'"
+            onmouseout="this.style.color='inherit';this.style.opacity='.55'"
+            onfocus="this.style.color='#ec008c';this.style.opacity='1'"
+            onblur="this.style.color='inherit';this.style.opacity='.55'"
           >
             AVISO LEGAL
           </a>
 
           <a
             href="/politicaprivacidad"
-            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;"
+            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;transition:color .2s ease,opacity .2s ease;"
+            onmouseover="this.style.color='#ec008c';this.style.opacity='1'"
+            onmouseout="this.style.color='inherit';this.style.opacity='.55'"
+            onfocus="this.style.color='#ec008c';this.style.opacity='1'"
+            onblur="this.style.color='inherit';this.style.opacity='.55'"
           >
             POLÍTICA DE PRIVACIDAD
           </a>
 
           <a
             href="/TyC"
-            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;"
+            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;transition:color .2s ease,opacity .2s ease;"
+            onmouseover="this.style.color='#ec008c';this.style.opacity='1'"
+            onmouseout="this.style.color='inherit';this.style.opacity='.55'"
+            onfocus="this.style.color='#ec008c';this.style.opacity='1'"
+            onblur="this.style.color='inherit';this.style.opacity='.55'"
           >
             TÉRMINOS Y CONDICIONES DE CONTRATACIÓN
           </a>
 
           <a
             href="/metodos-de-pago"
-            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;"
+            style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;transition:color .2s ease,opacity .2s ease;"
+            onmouseover="this.style.color='#ec008c';this.style.opacity='1'"
+            onmouseout="this.style.color='inherit';this.style.opacity='.55'"
+            onfocus="this.style.color='#ec008c';this.style.opacity='1'"
+            onblur="this.style.color='inherit';this.style.opacity='.55'"
           >
             MÉTODOS DE PAGO
           </a>
