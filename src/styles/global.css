@@ -30,6 +30,13 @@
 	--esn-pink: #ec008c;
 	--esn-green: #7ac143;
 	--esn-orange: #f47b20;
+	--esn-color-line: repeating-linear-gradient(
+		to right,
+		var(--esn-blue) 0 8.333%,
+		var(--esn-pink) 8.333% 16.667%,
+		var(--esn-green) 16.667% 25%,
+		var(--esn-orange) 25% 33.333%
+	);
 
 	--accent: #00aeef;
 	--accent-dark: #0077a8;
@@ -161,7 +168,7 @@ p {
 
 	display: grid;
 
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(12, 1fr);
 }
 
 .esn-color-bar span {
@@ -237,9 +244,9 @@ p {
 
 .header-bottom-line {
 	width: 100%;
-	height: 6px;
+	height: 10px;
 
-	background: #111111;
+	background: var(--esn-color-line);
 }
 
 
@@ -1593,22 +1600,7 @@ p {
 
 	transform: translateX(-50%);
 
-	background:
-		linear-gradient(
-			to right,
-
-			var(--esn-blue) 0%,
-			var(--esn-blue) 25%,
-
-			var(--esn-pink) 25%,
-			var(--esn-pink) 50%,
-
-			var(--esn-green) 50%,
-			var(--esn-green) 75%,
-
-			var(--esn-orange) 75%,
-			var(--esn-orange) 100%
-		);
+	background: var(--esn-color-line);
 }
 
 .site-footer strong {
@@ -1662,6 +1654,24 @@ p {
 
 
 @media (max-width: 900px) {
+
+	:root {
+		--esn-color-line: linear-gradient(
+			to right,
+			var(--esn-blue) 0 25%,
+			var(--esn-pink) 25% 50%,
+			var(--esn-green) 50% 75%,
+			var(--esn-orange) 75% 100%
+		);
+	}
+
+	.esn-color-bar {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.esn-color-bar span:nth-child(n + 5) {
+		display: none;
+	}
 
 	.desktop-nav {
 		display: none;
@@ -1913,7 +1923,7 @@ p {
 
 	.header-bottom-line {
 		width: 100%;
-		height: 6px;
+		height: 10px;
 	}
 
 
