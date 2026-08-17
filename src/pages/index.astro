@@ -9,7 +9,10 @@ import esnLogo from '../assets/esn-santiago-logo.png';
   title="ESN Santiago de Compostela — Erasmus Student Network"
   description="Connect, Discover, Experience. ESN Santiago de Compostela, comunidad internacional para estudiantes Erasmus y estudiantes locales."
 >
-  <!-- BARRA SUPERIOR ESN -->
+  <!-- =====================================================
+       BARRA SUPERIOR ESN — ANCHO COMPLETO
+  ====================================================== -->
+
   <div class="esn-color-bar" aria-hidden="true">
     <span class="esn-blue"></span>
     <span class="esn-pink"></span>
@@ -17,80 +20,163 @@ import esnLogo from '../assets/esn-santiago-logo.png';
     <span class="esn-orange"></span>
   </div>
 
+  <!-- =====================================================
+       HEADER — ANCHO COMPLETO
+  ====================================================== -->
+
   <header class="site-header">
-    <!-- LOGO -->
-    <a href="/" class="brand">
-      <Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" />
+    <div class="site-header-inner">
+      <!-- LOGO -->
 
-      <div class="brand-info">
-        <strong>ESN SANTIAGO</strong>
-        <span>SANTIAGO DE COMPOSTELA</span>
-      </div>
-    </a>
+      <a href="/" class="brand">
+        <Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" />
+      </a>
 
-    <!-- NAVEGACIÓN DESKTOP -->
-    <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#about">Sobre ESN</a>
-      <a href="#activities">Actividades</a>
-      <a href="#events">Eventos</a>
-      <a href="#join" class="nav-button">Únete →</a>
-    </nav>
+      <!-- =================================================
+           NAVEGACIÓN DESKTOP
+      ================================================== -->
 
-    <!-- BOTÓN HAMBURGUESA -->
-    <button
-      class="mobile-menu-button"
-      id="mobile-menu-button"
-      type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="/que-es-esn"> ¿Qué es ESN? </a>
+
+        <a href="/erasmus-tips"> Erasmus Tips </a>
+
+        <a href="/esncard"> ESNcard </a>
+
+        <a href="/eventos"> Eventos </a>
+
+        <!-- DESCUENTOS -->
+
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" type="button" aria-expanded="false">
+            <span>Descuentos</span>
+          </button>
+
+          <div class="nav-dropdown-menu">
+            <a href="/descuentos/locales">
+              <strong>Descuentos locales</strong>
+            </a>
+
+            <a href="/descuentos/nacionales">
+              <strong>Descuentos nacionales</strong>
+            </a>
+
+            <a href="/descuentos/internacionales">
+              <strong>Descuentos internacionales</strong>
+            </a>
+          </div>
+        </div>
+
+        <a href="/blog"> Blog </a>
+
+        <a href="/contacto"> Contacto </a>
+
+        <label class="language-switcher">
+          <span class="sr-only">Idioma</span>
+          <select data-language-select aria-label="Seleccionar idioma">
+            <option value="/es/" selected>Español</option>
+            <option value="/en/">Inglés</option>
+            <option value="/gl/">Gallego</option>
+            <option value="/fr/">Francés</option>
+            <option value="/de/">Alemán</option>
+            <option value="/pt/">Portugués</option>
+            <option value="/it/">Italiano</option>
+          </select>
+        </label>
+      </nav>
+
+      <!-- =================================================
+           BOTÓN HAMBURGUESA
+      ================================================== -->
+
+      <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
+  <!-- =====================================================
+       LÍNEA INFERIOR — ANCHO COMPLETO
+  ====================================================== -->
+
+  <div class="header-bottom-line"></div>
+
+  <!-- =====================================================
+       MENÚ MÓVIL
+  ====================================================== -->
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Navegación móvil">
+    <a href="/que-es-esn"> ¿Qué es ESN? </a>
+
+    <a href="/erasmus-tips"> Erasmus Tips </a>
+
+    <a href="/esncard"> ESNcard </a>
+
+    <a href="/eventos"> Eventos </a>
+
+    <!-- DESCUENTOS -->
+
+    <div class="mobile-menu-group">
+      <button
+        class="mobile-submenu-trigger"
+        type="button"
+        id="mobile-discounts-button"
+        aria-expanded="false"
+        aria-controls="mobile-discounts-menu"
+      >
+        <span>Descuentos</span>
+
+        <span class="mobile-submenu-icon"> + </span>
+      </button>
+
+      <div class="mobile-submenu" id="mobile-discounts-menu">
+        <a href="/descuentos/locales">
+          Descuentos locales
+        </a>
+
+        <a href="/descuentos/nacionales">
+          Descuentos nacionales
+        </a>
+
+        <a href="/descuentos/internacionales">
+          Descuentos internacionales
+        </a>
+      </div>
+    </div>
+
+    <a href="/blog"> Blog </a>
+
+    <a href="/contacto"> Contacto </a>
+
+    <div class="mobile-language-list">
+      <span>Idioma</span>
+      <a href="/es/" aria-current="page">Español</a>
+      <a href="/en/">Inglés</a>
+      <a href="/gl/">Gallego</a>
+      <a href="/fr/">Francés</a>
+      <a href="/de/">Alemán</a>
+      <a href="/pt/">Portugués</a>
+      <a href="/it/">Italiano</a>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+  ====================================================== -->
+
   <main class="site-container">
-    <!-- LÍNEA INFERIOR -->
-    <div class="header-bottom-line"></div>
-    <!-- MENÚ MÓVIL -->
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Navegación móvil">
-      <a href="#about">Sobre ESN</a>
-      <a href="#activities">Actividades</a>
-      <a href="#events">Eventos</a>
-      <a href="#join" class="mobile-menu-button-link">Únete →</a>
-    </nav>
-
-    <script>
-      const menuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      menuButton?.addEventListener('click', () => {
-        const isOpen = mobileMenu?.classList.toggle('is-open');
-
-        menuButton.classList.toggle('is-open', isOpen);
-
-        menuButton.setAttribute('aria-expanded', String(isOpen));
-
-        menuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-      });
-
-      // Cerrar el menú al pulsar un enlace
-      mobileMenu?.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('is-open');
-          menuButton?.classList.remove('is-open');
-
-          menuButton?.setAttribute('aria-expanded', 'false');
-
-          menuButton?.setAttribute('aria-label', 'Abrir menú');
-        });
-      });
-    </script>
-    <!-- =====================================================
-		     HERO
-		===================================================== -->
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
     <section class="hero">
       <div class="hero-label">
@@ -116,46 +202,55 @@ import esnLogo from '../assets/esn-santiago-logo.png';
         </p>
 
         <div class="hero-actions">
-          <a href="#events" class="brutalist-button"> VER EVENTOS </a>
+          <a href="/eventos" class="brutalist-button button-pink"> VER EVENTOS → </a>
 
-          <a href="#about" class="text-link"> Conoce ESN → </a>
+          <a href="/que-es-esn" class="text-link"> Conoce ESN → </a>
         </div>
+      </div>
+
+      <!-- BARRA DE COLORES -->
+
+      <div class="hero-color-blocks" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
 
-    <!-- =====================================================
-		     STATS
-		===================================================== -->
+    <!-- =================================================
+         STATS
+    ================================================== -->
 
     <section class="stats">
       <div class="stat">
-        <strong> ESN </strong>
+        <strong>ESN</strong>
 
         <span> International Community </span>
       </div>
 
       <div class="stat">
-        <strong> 🌍 </strong>
+        <strong>🌍</strong>
 
         <span> Estudiantes internacionales </span>
       </div>
 
       <div class="stat">
-        <strong> 🤝 </strong>
+        <strong>🤝</strong>
 
         <span> Voluntariado y comunidad </span>
       </div>
 
       <div class="stat">
-        <strong> 📍 </strong>
+        <strong>📍</strong>
 
         <span> Santiago de Compostela </span>
       </div>
     </section>
 
-    <!-- =====================================================
-		     ABOUT
-		===================================================== -->
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
 
     <section id="about" class="section">
       <div class="section-header">
@@ -187,9 +282,9 @@ import esnLogo from '../assets/esn-santiago-logo.png';
       </div>
     </section>
 
-    <!-- =====================================================
-		     ACTIVITIES
-		===================================================== -->
+    <!-- =================================================
+         ACTIVIDADES
+    ================================================== -->
 
     <section id="activities" class="section">
       <div class="section-header">
@@ -212,7 +307,7 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <p>Conoce estudiantes de todo el mundo y forma parte de una comunidad internacional en Santiago.</p>
 
-          <a href="#join"> Descubrir → </a>
+          <a href="/que-es-esn"> Descubrir → </a>
         </article>
 
         <article class="brutalist-card">
@@ -224,7 +319,7 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <p>Fiestas, actividades culturales, deporte, encuentros y experiencias para compartir.</p>
 
-          <a href="#events"> Ver eventos → </a>
+          <a href="/eventos"> Ver eventos → </a>
         </article>
 
         <article class="brutalist-card">
@@ -236,14 +331,14 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <p>Participa como voluntario y ayuda a construir una experiencia Erasmus mejor para todos.</p>
 
-          <a href="#join"> Participar → </a>
+          <a href="/contacto"> Participar → </a>
         </article>
       </div>
     </section>
 
-    <!-- =====================================================
-		     EVENTS
-		===================================================== -->
+    <!-- =================================================
+         EVENTOS
+    ================================================== -->
 
     <section id="events" class="section">
       <div class="section-header events-header">
@@ -257,15 +352,15 @@ import esnLogo from '../assets/esn-santiago-logo.png';
           </h2>
         </div>
 
-        <a href="#" class="text-link"> Ver todos → </a>
+        <a href="/eventos" class="text-link"> Ver todos → </a>
       </div>
 
       <div class="events-list">
         <article class="event-row">
           <div class="event-date">
-            <span> SEP </span>
+            <span>SEP</span>
 
-            <strong> 01 </strong>
+            <strong>01</strong>
           </div>
 
           <div class="event-info">
@@ -278,14 +373,14 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <div class="event-location">📍 Santiago</div>
 
-          <a href="#" class="event-arrow" aria-label="Ver Welcome Event"> ↗ </a>
+          <a href="/eventos" class="event-arrow" aria-label="Ver Welcome Event"> ↗ </a>
         </article>
 
         <article class="event-row">
           <div class="event-date">
-            <span> OCT </span>
+            <span>OCT</span>
 
-            <strong> 10 </strong>
+            <strong>10</strong>
           </div>
 
           <div class="event-info">
@@ -298,14 +393,14 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <div class="event-location">📍 Santiago</div>
 
-          <a href="#" class="event-arrow" aria-label="Ver Cultural Exchange"> ↗ </a>
+          <a href="/eventos" class="event-arrow" aria-label="Ver Cultural Exchange"> ↗ </a>
         </article>
 
         <article class="event-row">
           <div class="event-date">
-            <span> OCT </span>
+            <span>OCT</span>
 
-            <strong> 24 </strong>
+            <strong>24</strong>
           </div>
 
           <div class="event-info">
@@ -318,14 +413,14 @@ import esnLogo from '../assets/esn-santiago-logo.png';
 
           <div class="event-location">📍 Galicia</div>
 
-          <a href="#" class="event-arrow" aria-label="Ver Discover Galicia"> ↗ </a>
+          <a href="/eventos" class="event-arrow" aria-label="Ver Discover Galicia"> ↗ </a>
         </article>
       </div>
     </section>
 
-    <!-- =====================================================
-		     JOIN
-		===================================================== -->
+    <!-- =================================================
+         JOIN
+    ================================================== -->
 
     <section id="join" class="join-section">
       <div class="join-content">
@@ -334,7 +429,8 @@ import esnLogo from '../assets/esn-santiago-logo.png';
         <h2>
           No seas
           <br />
-          <strong>un espectador.</strong>
+
+          <strong> un espectador. </strong>
         </h2>
 
         <p>
@@ -342,18 +438,19 @@ import esnLogo from '../assets/esn-santiago-logo.png';
           internacionales.
         </p>
 
-        <a href="#contact" class="brutalist-button"> QUIERO PARTICIPAR → </a>
+        <a href="/contacto" class="brutalist-button button-pink"> QUIERO PARTICIPAR → </a>
       </div>
 
       <div class="join-decoration">
         <span>ESN</span>
+
         <span>SANTIAGO</span>
       </div>
     </section>
 
-    <!-- =====================================================
-		     LANGUAGES
-		===================================================== -->
+    <!-- =================================================
+         LANGUAGES
+    ================================================== -->
 
     <section class="languages">
       <div>
@@ -362,6 +459,7 @@ import esnLogo from '../assets/esn-santiago-logo.png';
         <h2>
           Un espacio
           <br />
+
           para todos.
         </h2>
       </div>
@@ -384,9 +482,9 @@ import esnLogo from '../assets/esn-santiago-logo.png';
       </div>
     </section>
 
-    <!-- =====================================================
-		     CONTACT
-		===================================================== -->
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
 
     <section id="contact" class="contact-section">
       <div>
@@ -408,16 +506,16 @@ import esnLogo from '../assets/esn-santiago-logo.png';
           <span>↗</span>
         </a>
 
-        <a href="#">
+        <a href="/esncard">
           ESNcard
           <span>↗</span>
         </a>
       </div>
     </section>
 
-    <!-- =====================================================
-		     FOOTER
-		===================================================== -->
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
 
     <footer class="site-footer">
       <div>
@@ -437,4 +535,98 @@ import esnLogo from '../assets/esn-santiago-logo.png';
       </div>
     </footer>
   </main>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+    /* =================================================
+       MENÚ PRINCIPAL MÓVIL
+    ================================================== */
+
+    const menuButton = document.getElementById('mobile-menu-button');
+
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.toggle('is-open');
+
+      menuButton.classList.toggle('is-open', !!isOpen);
+
+      menuButton.setAttribute('aria-expanded', String(!!isOpen));
+
+      menuButton.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+
+    /* =================================================
+       SUBMENÚ DESCUENTOS DESKTOP
+    ================================================== */
+
+    const dropdownTrigger = document.querySelector('.nav-dropdown-trigger');
+
+    const dropdown = document.querySelector('.nav-dropdown');
+
+    dropdownTrigger?.addEventListener('click', () => {
+      const isOpen = dropdown?.classList.toggle('is-open');
+
+      dropdownTrigger.setAttribute('aria-expanded', String(!!isOpen));
+    });
+
+    /* =================================================
+       CERRAR DROPDOWN AL HACER CLICK FUERA
+    ================================================== */
+
+    document.addEventListener('click', (event) => {
+      const target = event.target as Node;
+
+      if (dropdown && !dropdown.contains(target)) {
+        dropdown.classList.remove('is-open');
+
+        dropdownTrigger?.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    /* =================================================
+       SUBMENÚ DESCUENTOS MÓVIL
+    ================================================== */
+
+    const mobileDiscountsButton = document.getElementById('mobile-discounts-button');
+
+    const mobileDiscountsMenu = document.getElementById('mobile-discounts-menu');
+
+    mobileDiscountsButton?.addEventListener('click', () => {
+      const isOpen = mobileDiscountsMenu?.classList.toggle('is-open');
+
+      mobileDiscountsButton.setAttribute('aria-expanded', String(!!isOpen));
+
+      const icon = mobileDiscountsButton.querySelector('.mobile-submenu-icon');
+
+      if (icon) {
+        icon.textContent = isOpen ? '−' : '+';
+      }
+    });
+
+    /* =================================================
+       CERRAR MENÚ MÓVIL AL NAVEGAR
+    ================================================== */
+
+    mobileMenu?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('is-open');
+
+        menuButton?.classList.remove('is-open');
+
+        menuButton?.setAttribute('aria-expanded', 'false');
+
+        menuButton?.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+
+    document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => {
+      select.addEventListener('change', () => {
+        window.location.href = select.value;
+      });
+    });
+  </script>
 </Layout>

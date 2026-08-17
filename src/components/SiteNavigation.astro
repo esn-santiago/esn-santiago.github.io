@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import esnLogo from '../assets/esn-santiago-logo.png';
+import { languages, pages, type LanguageCode } from '../data/site';
+
+const { lang = 'es' } = Astro.props as { lang?: LanguageCode };
+const prefix = lang === 'es' ? '' : `/${lang}`;
+const link = (path: string) => `${prefix}/${path}`;
+const currentPath = Astro.url.pathname;
+const localePattern = new RegExp(`^/(?:${Object.keys(languages).join('|')})(?=/|$)`);
+const pagePath = currentPath.replace(localePattern, '') || '/';
+const knownPages = new Set(['/', ...Object.keys(pages).map((page) => `/${page}`)]);
+const languageLink = (code: string) => {
+  const targetPath = knownPages.has(pagePath) ? pagePath : `/en${pagePath}`;
+  return knownPages.has(pagePath) ? `/${code}${targetPath === '/' ? '/' : targetPath}` : targetPath;
+};
+---
+
+<div class="esn-color-bar" aria-hidden="true"><span class="esn-blue"></span><span class="esn-pink"></span><span class="esn-green"></span><span class="esn-orange"></span></div>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href={prefix || '/'} class="brand"><Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" /></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href={link('que-es-esn')}>{pages['que-es-esn']}</a><a href={link('erasmus-tips')}>{pages['erasmus-tips']}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{pages.eventos}</a>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" type="button" aria-expanded="false">Discounts</button><div class="nav-dropdown-menu"><a href={link('descuentos/locales')}>Local discounts</a><a href={link('descuentos/nacionales')}>National discounts</a><a href={link('descuentos/internacionales')}>International discounts</a></div></div>
+      <a href={link('blog')}>{pages.blog}</a><a href={link('contacto')}>{pages.contacto}</a>
+      <label class="language-switcher"><span class="sr-only">Language</span><select data-language-select aria-label="Select language">{Object.entries(languages).map(([code, name]) => <option value={languageLink(code)} selected={code === lang}>{name}</option>)}</select></label>
+    </nav>
+    <button class="mobile-menu-button" data-mobile-menu-button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="header-bottom-line"></div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+  <a href={link('que-es-esn')}>{pages['que-es-esn']}</a><a href={link('erasmus-tips')}>{pages['erasmus-tips']}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{pages.eventos}</a>
+  <div class="mobile-menu-group"><button class="mobile-submenu-trigger" type="button" aria-expanded="false">Discounts <span class="mobile-submenu-icon">+</span></button><div class="mobile-submenu"><a href={link('descuentos/locales')}>Local discounts</a><a href={link('descuentos/nacionales')}>National discounts</a><a href={link('descuentos/internacionales')}>International discounts</a></div></div>
+  <a href={link('blog')}>{pages.blog}</a><a href={link('contacto')}>{pages.contacto}</a>
+  <div class="mobile-language-list"><span>Language</span>{Object.entries(languages).map(([code, name]) => <a href={languageLink(code)} aria-current={code === lang ? 'page' : undefined}>{name}</a>)}</div>
+</nav>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
+  const menu = document.getElementById('mobile-menu');
+  button?.addEventListener('click', () => { const open = menu?.classList.toggle('is-open') ?? false; button.classList.toggle('is-open', open); button.setAttribute('aria-expanded', String(open)); button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+  document.querySelector<HTMLButtonElement>('.mobile-submenu-trigger')?.addEventListener('click', (event) => { const trigger = event.currentTarget; const submenu = trigger.parentElement?.querySelector('.mobile-submenu'); const open = submenu?.classList.toggle('is-open') ?? false; trigger.setAttribute('aria-expanded', String(open)); const icon = trigger.querySelector('.mobile-submenu-icon'); if (icon) icon.textContent = open ? '−' : '+'; });
+  document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => select.addEventListener('change', () => { window.location.href = select.value; }));
+</script>

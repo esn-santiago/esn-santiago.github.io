@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNavigation from '../../components/SiteNavigation.astro';
+import HomePage from '../../components/HomePage.astro';
+import { languages, type LanguageCode } from '../../data/site';
+export function getStaticPaths() { return ['es', 'en', 'gl', 'fr', 'de', 'pt', 'it'].map((lang) => ({ params: { lang } })); }
+const lang = Astro.params.lang as LanguageCode;
+---
+<Layout title={`ESN Santiago — ${languages[lang]}`}>
+  <SiteNavigation {lang} />
+  <HomePage {lang} />
+</Layout>
