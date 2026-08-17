@@ -13,6 +13,16 @@ const content = {
 } as const;
 const t = content[lang];
 const eventLink = `/${lang}/eventos`;
+const legalLinks = {
+  es: ['AVISO LEGAL', 'POLÍTICA DE PRIVACIDAD', 'TÉRMINOS Y CONDICIONES DE CONTRATACIÓN', 'MÉTODOS DE PAGO'],
+  en: ['LEGAL NOTICE', 'PRIVACY POLICY', 'TERMS AND CONDITIONS', 'PAYMENT METHODS'],
+  gl: ['AVISO LEGAL', 'POLÍTICA DE PRIVACIDADE', 'TERMOS E CONDICIÓNS DE CONTRATACIÓN', 'MÉTODOS DE PAGO'],
+  fr: ['MENTIONS LÉGALES', 'POLITIQUE DE CONFIDENTIALITÉ', 'CONDITIONS GÉNÉRALES', 'MODES DE PAIEMENT'],
+  de: ['IMPRESSUM', 'DATENSCHUTZERKLÄRUNG', 'ALLGEMEINE GESCHÄFTSBEDINGUNGEN', 'ZAHLUNGSMETHODEN'],
+  pt: ['AVISO LEGAL', 'POLÍTICA DE PRIVACIDADE', 'TERMOS E CONDIÇÕES DE CONTRATAÇÃO', 'MÉTODOS DE PAGAMENTO'],
+  it: ['NOTE LEGALI', 'INFORMATIVA SULLA PRIVACY', 'TERMINI E CONDIZIONI', 'METODI DI PAGAMENTO'],
+} as const;
+const legal = legalLinks[lang];
 ---
 
 <main class="site-container">
@@ -24,5 +34,5 @@ const eventLink = `/${lang}/eventos`;
   <section class="join-section"><div class="join-content"><div class="section-number">04 / ESN</div><h2>{t[5]}</h2><p>{t[1]}</p><a href={`/${lang}/contacto`} class="brutalist-button button-pink">JOIN ESN →</a></div><div class="join-decoration"><span>ESN</span><span>SANTIAGO</span></div></section>
   <section class="languages"><div><span class="section-number">05 / LANGUAGES</span><h2>{t[6]}</h2></div><div class="language-list"><a href="/es/">Español</a><a href="/en/">English</a><a href="/gl/">Galego</a><a href="/fr/">Français</a><a href="/de/">Deutsch</a><a href="/pt/">Português</a><a href="/it/">Italiano</a></div></section>
   <section class="contact-section"><div><div class="section-number">06 / CONTACT</div><h2>{t[7]}</h2><p>{t[1]}</p></div><div class="contact-links"><a href="#">Instagram <span>↗</span></a><a href="#">Email <span>↗</span></a><a href={`/${lang}/esncard`}>ESNcard <span>↗</span></a></div></section>
-  <footer class="site-footer"><div><strong>ESN SANTIAGO</strong><p>Erasmus Student Network<br />Santiago de Compostela · Galicia</p></div><div class="footer-right">Connect · Discover · Experience</div></footer>
+  <footer class="site-footer"><div><strong>ESN SANTIAGO</strong><p>Erasmus Student Network<br />Santiago de Compostela · Galicia</p></div><div class="footer-right"><nav class="footer-legal-links" aria-label={legal[0]}><a href={`/${lang}/avisolegal`}>{legal[0]}</a><a href={`/${lang}/politicaprivacidad`}>{legal[1]}</a><a href={`/${lang}/TyC`}>{legal[2]}</a><a href={`/${lang}/metodos-de-pago`}>{legal[3]}</a></nav></div></footer>
 </main>

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SiteNavigation from '../components/SiteNavigation.astro';
 import { pages, pageContent, type PageSlug } from '../data/site';
-export function getStaticPaths() { return ['que-es-esn', 'erasmus-tips', 'esncard', 'eventos', 'blog', 'contacto'].map((page) => ({ params: { page } })); }
+export function getStaticPaths() { return ['que-es-esn', 'erasmus-tips', 'esncard', 'eventos', 'blog', 'contacto', 'avisolegal', 'politicaprivacidad', 'TyC', 'metodos-de-pago'].map((page) => ({ params: { page } })); }
 const page = Astro.params.page as PageSlug;
 const content = pageContent('es', page);
 ---

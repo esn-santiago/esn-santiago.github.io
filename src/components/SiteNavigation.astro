@@ -10,6 +10,16 @@ const currentPath = Astro.url.pathname;
 const localePattern = new RegExp(`^/(?:${Object.keys(languages).join('|')})(?=/|$)`);
 const pagePath = currentPath.replace(localePattern, '') || '/';
 const knownPages = new Set(['/', ...Object.keys(pages).map((page) => `/${page}`)]);
+const navigation = {
+  es: { about: 'Qué es ESN', tips: 'Consejos Erasmus', events: 'Eventos', discounts: 'Descuentos', local: 'Descuentos locales', national: 'Descuentos nacionales', international: 'Descuentos internacionales', contact: 'Contacto', language: 'Idioma' },
+  en: { about: 'What is ESN', tips: 'Erasmus tips', events: 'Events', discounts: 'Discounts', local: 'Local discounts', national: 'National discounts', international: 'International discounts', contact: 'Contact', language: 'Language' },
+  gl: { about: 'Que é ESN', tips: 'Consellos Erasmus', events: 'Eventos', discounts: 'Descontos', local: 'Descontos locais', national: 'Descontos nacionais', international: 'Descontos internacionais', contact: 'Contacto', language: 'Idioma' },
+  fr: { about: 'Qu’est-ce qu’ESN', tips: 'Conseils Erasmus', events: 'Événements', discounts: 'Réductions', local: 'Réductions locales', national: 'Réductions nationales', international: 'Réductions internationales', contact: 'Contact', language: 'Langue' },
+  de: { about: 'Was ist ESN', tips: 'Erasmus-Tipps', events: 'Veranstaltungen', discounts: 'Rabatte', local: 'Lokale Rabatte', national: 'Nationale Rabatte', international: 'Internationale Rabatte', contact: 'Kontakt', language: 'Sprache' },
+  pt: { about: 'O que é a ESN', tips: 'Dicas Erasmus', events: 'Eventos', discounts: 'Descontos', local: 'Descontos locais', national: 'Descontos nacionais', international: 'Descontos internacionais', contact: 'Contacto', language: 'Idioma' },
+  it: { about: 'Cos’è ESN', tips: 'Consigli Erasmus', events: 'Eventi', discounts: 'Sconti', local: 'Sconti locali', national: 'Sconti nazionali', international: 'Sconti internazionali', contact: 'Contatti', language: 'Lingua' },
+} as const;
+const nav = navigation[lang];
 const languageLink = (code: string) => {
   const targetPath = knownPages.has(pagePath) ? pagePath : `/en${pagePath}`;
   return knownPages.has(pagePath) ? `/${code}${targetPath === '/' ? '/' : targetPath}` : targetPath;
@@ -21,20 +31,20 @@ const languageLink = (code: string) => {
   <div class="site-header-inner">
     <a href={prefix || '/'} class="brand"><Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" /></a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href={link('que-es-esn')}>{pages['que-es-esn']}</a><a href={link('erasmus-tips')}>{pages['erasmus-tips']}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{pages.eventos}</a>
-      <div class="nav-dropdown"><button class="nav-dropdown-trigger" type="button" aria-expanded="false">Discounts</button><div class="nav-dropdown-menu"><a href={link('descuentos/locales')}>Local discounts</a><a href={link('descuentos/nacionales')}>National discounts</a><a href={link('descuentos/internacionales')}>International discounts</a></div></div>
-      <a href={link('blog')}>{pages.blog}</a><a href={link('contacto')}>{pages.contacto}</a>
-      <label class="language-switcher"><span class="sr-only">Language</span><select data-language-select aria-label="Select language">{Object.entries(languages).map(([code, name]) => <option value={languageLink(code)} selected={code === lang}>{name}</option>)}</select></label>
+      <a href={link('que-es-esn')}>{nav.about}</a><a href={link('erasmus-tips')}>{nav.tips}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{nav.events}</a>
+      <div class="nav-dropdown"><button class="nav-dropdown-trigger" type="button" aria-expanded="false">{nav.discounts}</button><div class="nav-dropdown-menu"><a href={link('descuentos/locales')}>{nav.local}</a><a href={link('descuentos/nacionales')}>{nav.national}</a><a href={link('descuentos/internacionales')}>{nav.international}</a></div></div>
+      <a href={link('blog')}>Blog</a><a href={link('contacto')}>{nav.contact}</a>
+      <label class="language-switcher"><span class="sr-only">{nav.language}</span><select data-language-select aria-label={nav.language}>{Object.entries(languages).map(([code, name]) => <option value={languageLink(code)} selected={code === lang}>{name}</option>)}</select></label>
     </nav>
     <button class="mobile-menu-button" data-mobile-menu-button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 <div class="header-bottom-line"></div>
 <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-  <a href={link('que-es-esn')}>{pages['que-es-esn']}</a><a href={link('erasmus-tips')}>{pages['erasmus-tips']}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{pages.eventos}</a>
-  <div class="mobile-menu-group"><button class="mobile-submenu-trigger" type="button" aria-expanded="false">Discounts <span class="mobile-submenu-icon">+</span></button><div class="mobile-submenu"><a href={link('descuentos/locales')}>Local discounts</a><a href={link('descuentos/nacionales')}>National discounts</a><a href={link('descuentos/internacionales')}>International discounts</a></div></div>
-  <a href={link('blog')}>{pages.blog}</a><a href={link('contacto')}>{pages.contacto}</a>
-  <div class="mobile-language-list"><span>Language</span>{Object.entries(languages).map(([code, name]) => <a href={languageLink(code)} aria-current={code === lang ? 'page' : undefined}>{name}</a>)}</div>
+  <a href={link('que-es-esn')}>{nav.about}</a><a href={link('erasmus-tips')}>{nav.tips}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{nav.events}</a>
+  <div class="mobile-menu-group"><button class="mobile-submenu-trigger" type="button" aria-expanded="false">{nav.discounts} <span class="mobile-submenu-icon">+</span></button><div class="mobile-submenu"><a href={link('descuentos/locales')}>{nav.local}</a><a href={link('descuentos/nacionales')}>{nav.national}</a><a href={link('descuentos/internacionales')}>{nav.international}</a></div></div>
+  <a href={link('blog')}>Blog</a><a href={link('contacto')}>{nav.contact}</a>
+  <div class="mobile-language-list"><span>{nav.language}</span>{Object.entries(languages).map(([code, name]) => <a href={languageLink(code)} aria-current={code === lang ? 'page' : undefined}>{name}</a>)}</div>
 </nav>
 <script>
   const button = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
