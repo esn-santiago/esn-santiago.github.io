@@ -17,7 +17,6 @@ const en: Dictionary = {
     closeMenu: 'Close menu',
     mainNav: 'Main navigation',
     mobileNav: 'Mobile navigation',
-    backHome: 'Back to home',
   },
   home: {
     heroTitle: ['Students', 'Helping', 'Students'],
@@ -25,9 +24,8 @@ const en: Dictionary = {
       'ESN Santiago de Compostela connects international and local students through experiences, volunteering, culture and community.',
     heroCtaEvents: 'VIEW EVENTS →',
     heroCtaAbout: 'Discover ESN →',
-    stats: ['International Community', 'International students', 'Volunteering and community', 'Santiago de Compostela'],
+    committees: ['Sports', 'Social', 'Culture', 'Travel'],
     about: {
-      number: '01 / ABOUT ESN',
       heading: ['A community', 'without borders.'],
       leadBefore: 'ESN Santiago de Compostela is part of the ',
       leadStrong: 'Erasmus Student Network',
@@ -38,7 +36,6 @@ const en: Dictionary = {
       ],
     },
     activities: {
-      number: '02 / WHAT WE DO',
       heading: ['Discover', 'ESN.'],
       cards: [
         { icon: '🌍', title: 'International', text: 'Meet students from all over the world and become part of an international community in Santiago.', cta: 'Discover →', href: 'que-es-esn' },
@@ -47,7 +44,6 @@ const en: Dictionary = {
       ],
     },
     events: {
-      number: '03 / AGENDA',
       heading: ['Upcoming', 'events.'],
       viewAll: 'View all →',
       items: [
@@ -57,18 +53,12 @@ const en: Dictionary = {
       ],
     },
     join: {
-      number: '04 / JOIN',
       heading: 'Do not be',
       emphasis: 'a spectator.',
       text: 'Join ESN Santiago. Meet people, discover Galicia, take part in activities and help other international students.',
       cta: 'I WANT TO JOIN →',
     },
-    languagesSection: {
-      number: '05 / LANGUAGES',
-      heading: ['A space', 'for everyone.'],
-    },
     contact: {
-      number: '06 / CONTACT',
       heading: 'Shall we talk?',
       text: 'Are you an international student? Want to collaborate with ESN? Have a proposal?',
       instagram: 'Instagram',

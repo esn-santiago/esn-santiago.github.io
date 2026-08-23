@@ -17,7 +17,6 @@ const gl: Dictionary = {
     closeMenu: 'Pechar menú',
     mainNav: 'Navegación principal',
     mobileNav: 'Navegación móbil',
-    backHome: 'Volver ao inicio',
   },
   home: {
     heroTitle: ['Students', 'Helping', 'Students'],
@@ -25,9 +24,8 @@ const gl: Dictionary = {
       'ESN Santiago de Compostela conecta estudantes internacionais e locais a través de experiencias, voluntariado, cultura e comunidade.',
     heroCtaEvents: 'VER EVENTOS →',
     heroCtaAbout: 'Coñece ESN →',
-    stats: ['International Community', 'Estudantes internacionais', 'Voluntariado e comunidade', 'Santiago de Compostela'],
+    committees: ['Deportes', 'Social', 'Cultural', 'Viaxes'],
     about: {
-      number: '01 / SOBRE ESN',
       heading: ['Unha comunidade', 'sen fronteiras.'],
       leadBefore: 'ESN Santiago de Compostela forma parte de ',
       leadStrong: 'Erasmus Student Network',
@@ -38,7 +36,6 @@ const gl: Dictionary = {
       ],
     },
     activities: {
-      number: '02 / QUE FACEMOS',
       heading: ['Descubre', 'ESN.'],
       cards: [
         { icon: '🌍', title: 'International', text: 'Coñece estudantes de todo o mundo e forma parte dunha comunidade internacional en Santiago.', cta: 'Descubrir →', href: 'que-es-esn' },
@@ -47,7 +44,6 @@ const gl: Dictionary = {
       ],
     },
     events: {
-      number: '03 / AXENDA',
       heading: ['Próximos', 'eventos.'],
       viewAll: 'Ver todos →',
       items: [
@@ -57,18 +53,12 @@ const gl: Dictionary = {
       ],
     },
     join: {
-      number: '04 / PARTICIPA',
       heading: 'Non sexas',
       emphasis: 'un espectador.',
       text: 'Únete a ESN Santiago. Coñece xente, descubre Galicia, participa en actividades e axuda a outros estudantes internacionais.',
       cta: 'QUERO PARTICIPAR →',
     },
-    languagesSection: {
-      number: '05 / IDIOMAS',
-      heading: ['Un espazo', 'para todos.'],
-    },
     contact: {
-      number: '06 / CONTACTO',
       heading: 'Falamos?',
       text: 'Es estudante internacional? Queres colaborar con ESN? Tes unha proposta?',
       instagram: 'Instagram',

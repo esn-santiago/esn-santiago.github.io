@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiteNavigation from '../components/SiteNavigation.astro';
-import { defaultLang, languages, pageSlugs, getDictionary, type PageSlug } from '../i18n';
+import { defaultLang, pageSlugs, getDictionary, type PageSlug } from '../i18n';
 
 export function getStaticPaths() {
   return pageSlugs.map((slug) => ({ params: { slug } }));
@@ -16,7 +16,6 @@ const content = dict.pages[slug];
 <Layout lang={lang} title={`${content.title} — ESN Santiago`}>
   <SiteNavigation lang={lang} />
   <main class="site-container content-page">
-    <span class="section-number">ESN SANTIAGO · {languages[lang]}</span>
     <h1>{content.title}</h1>
     <p>{content.text}</p>
     {slug === 'esncard' && (
@@ -28,6 +27,5 @@ const content = dict.pages[slug];
         style="min-height: 700px; overflow-y: scroll; width: 100%;"
       />
     )}
-    <a class="brutalist-button button-blue" href="/">{dict.nav.backHome}</a>
   </main>
 </Layout>

@@ -1,5 +1,5 @@
 ---
-import { getDictionary, languages, languageCodes, langPrefix, defaultLang, type LanguageCode } from '../i18n';
+import { getDictionary, langPrefix, defaultLang, type LanguageCode } from '../i18n';
 
 const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
 const dict = getDictionary(lang);
@@ -26,38 +26,37 @@ const socials = [
 ] as const satisfies { name: keyof typeof icons; href: string; hoverBg: string; hoverColor: string; hoverBorder: string }[];
 ---
 
-<main class="site-container">
+<main class="home-container">
   <section class="hero">
-    <div class="hero-label"><span class="hero-dot"></span>SANTIAGO DE COMPOSTELA</div>
-    <div class="hero-label"><span class="hero-dot"></span>LUGO</div>
+    <div class="hero-highlight">
+      <div class="hero-highlight-inner home-container">
+        <div class="hero-labels">
+          <div class="hero-label"><span class="hero-dot"></span>SANTIAGO DE COMPOSTELA</div>
+          <div class="hero-label"><span class="hero-dot"></span>LUGO</div>
+        </div>
 
-    <h1>{home.heroTitle[0]}<br /><span>{home.heroTitle[1]}</span><br />{home.heroTitle[2]}</h1>
+        <h1>{home.heroTitle[0]}<br /><span>{home.heroTitle[1]}</span><br />{home.heroTitle[2]}</h1>
 
-    <div class="hero-bottom">
-      <p>{home.heroText}</p>
-      <div class="hero-actions">
-        <a href={path('eventos')} class="brutalist-button button-pink">{home.heroCtaEvents}</a>
-        <a href={path('que-es-esn')} class="text-link">{home.heroCtaAbout}</a>
+        <div class="hero-bottom">
+          <p>{home.heroText}</p>
+          <div class="hero-actions">
+            <a href={path('eventos')} class="brutalist-button button-dark">{home.heroCtaEvents}</a>
+            <a href={path('que-es-esn')} class="text-link">{home.heroCtaAbout}</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="hero-color-blocks" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
   </section>
 
   <section class="stats">
-    <div class="stat"><strong>ESN</strong><span>{home.stats[0]}</span></div>
-    <div class="stat"><strong>🌍</strong><span>{home.stats[1]}</span></div>
-    <div class="stat"><strong>🤝</strong><span>{home.stats[2]}</span></div>
-    <div class="stat"><strong>📍</strong><span>{home.stats[3]}</span></div>
+    {home.committees.map((committee) => (
+      <div class="stat"><strong>{committee}</strong></div>
+    ))}
   </section>
 
   <section id="about" class="section">
-    <div class="section-header">
-      <div class="section-number">{home.about.number}</div>
-      <h2>{home.about.heading[0]}<br />{home.about.heading[1]}</h2>
-    </div>
     <div class="two-columns">
-      <div></div>
+      <h2>{home.about.heading[0]}<br />{home.about.heading[1]}</h2>
       <div class="section-text">
         <p class="large-text">{home.about.leadBefore}<strong>{home.about.leadStrong}</strong>{home.about.leadAfter}</p>
         <p>{home.about.paragraphs[0]}</p>
@@ -68,7 +67,6 @@ const socials = [
 
   <section id="activities" class="section">
     <div class="section-header">
-      <div class="section-number">{home.activities.number}</div>
       <h2>{home.activities.heading[0]}<br />{home.activities.heading[1]}</h2>
     </div>
     <div class="card-grid">
@@ -85,11 +83,8 @@ const socials = [
   </section>
 
   <section id="events" class="section">
-    <div class="section-header events-header">
-      <div>
-        <div class="section-number">{home.events.number}</div>
-        <h2>{home.events.heading[0]}<br />{home.events.heading[1]}</h2>
-      </div>
+    <div class="events-header">
+      <h2>{home.events.heading[0]}<br />{home.events.heading[1]}</h2>
       <a href={path('eventos')} class="text-link">{home.events.viewAll}</a>
     </div>
     <div class="events-list">
@@ -110,27 +105,15 @@ const socials = [
 
   <section id="join" class="join-section">
     <div class="join-content">
-      <div class="section-number">{home.join.number}</div>
       <h2>{home.join.heading}<br /><strong>{home.join.emphasis}</strong></h2>
       <p>{home.join.text}</p>
       <a href={path('contacto')} class="brutalist-button button-pink">{home.join.cta}</a>
     </div>
-    <div class="join-decoration"><span>ESN</span><span>SANTIAGO</span></div>
-  </section>
-
-  <section class="languages">
-    <div>
-      <span class="section-number">{home.languagesSection.number}</span>
-      <h2>{home.languagesSection.heading[0]}<br />{home.languagesSection.heading[1]}</h2>
-    </div>
-    <div class="language-list">
-      {languageCodes.map((code) => <a href={langPrefix(code) || '/'}>{languages[code]}</a>)}
-    </div>
+    <div class="join-decoration" aria-hidden="true"><span>ESN</span><span>SANTIAGO</span></div>
   </section>
 
   <section id="contact" class="contact-section">
     <div>
-      <div class="section-number">{home.contact.number}</div>
       <h2>{home.contact.heading}</h2>
       <p>{home.contact.text}</p>
     </div>
@@ -141,9 +124,12 @@ const socials = [
     </div>
   </section>
 
-  <footer class="site-footer" style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px;padding:56px 0 40px;border-top:2px solid currentColor;">
+  <footer class="site-footer" style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px;padding:56px 0 40px;">
     <div style="flex:0 0 auto;">
-      <strong style="display:block;margin:0 0 12px;font-size:1.1rem;font-weight:900;letter-spacing:.04em;">ESN SANTIAGO</strong>
+      <div style="display:flex;align-items:center;gap:10px;margin:0 0 12px;">
+        <img src="/favicon-32x32.png" alt="" width="24" height="24" style="display:block;" />
+        <strong style="font-size:1.1rem;font-weight:900;letter-spacing:.04em;">ESN Santiago de Compostela</strong>
+      </div>
       <p style="margin:0;font-size:.85rem;line-height:1.6;opacity:.65;">{home.footer.tagline}<br />{home.footer.address}</p>
     </div>
 

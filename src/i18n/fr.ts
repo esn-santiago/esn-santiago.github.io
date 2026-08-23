@@ -17,7 +17,6 @@ const fr: Dictionary = {
     closeMenu: 'Fermer le menu',
     mainNav: 'Navigation principale',
     mobileNav: 'Navigation mobile',
-    backHome: "Retour à l'accueil",
   },
   home: {
     heroTitle: ['Students', 'Helping', 'Students'],
@@ -25,9 +24,8 @@ const fr: Dictionary = {
       'ESN Santiago de Compostela relie les étudiants internationaux et locaux grâce à des expériences, du bénévolat, de la culture et une communauté.',
     heroCtaEvents: 'VOIR LES ÉVÉNEMENTS →',
     heroCtaAbout: 'Découvre ESN →',
-    stats: ['International Community', 'Étudiants internationaux', 'Bénévolat et communauté', 'Santiago de Compostela'],
+    committees: ['Sport', 'Social', 'Culturel', 'Voyages'],
     about: {
-      number: '01 / À PROPOS',
       heading: ['Une communauté', 'sans frontières.'],
       leadBefore: "ESN Santiago de Compostela fait partie de l'",
       leadStrong: 'Erasmus Student Network',
@@ -38,7 +36,6 @@ const fr: Dictionary = {
       ],
     },
     activities: {
-      number: '02 / CE QUE NOUS FAISONS',
       heading: ['Découvre', 'ESN.'],
       cards: [
         { icon: '🌍', title: 'International', text: 'Rencontre des étudiants du monde entier et intègre une communauté internationale à Saint-Jacques-de-Compostelle.', cta: 'Découvrir →', href: 'que-es-esn' },
@@ -47,7 +44,6 @@ const fr: Dictionary = {
       ],
     },
     events: {
-      number: '03 / AGENDA',
       heading: ['Prochains', 'événements.'],
       viewAll: 'Voir tout →',
       items: [
@@ -57,18 +53,12 @@ const fr: Dictionary = {
       ],
     },
     join: {
-      number: '04 / PARTICIPE',
       heading: 'Ne reste pas',
       emphasis: 'spectateur.',
       text: 'Rejoins ESN Santiago. Rencontre des gens, découvre la Galice, participe à des activités et aide d\'autres étudiants internationaux.',
       cta: 'JE VEUX PARTICIPER →',
     },
-    languagesSection: {
-      number: '05 / LANGUES',
-      heading: ['Un espace', 'pour tous.'],
-    },
     contact: {
-      number: '06 / CONTACT',
       heading: 'On se parle ?',
       text: 'Tu es étudiant international ? Tu veux collaborer avec ESN ? Tu as une proposition ?',
       instagram: 'Instagram',

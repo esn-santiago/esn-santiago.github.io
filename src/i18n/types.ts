@@ -29,7 +29,6 @@ export interface NavDict {
   closeMenu: string;
   mainNav: string;
   mobileNav: string;
-  backHome: string;
 }
 
 export interface HomeDict {
@@ -37,9 +36,8 @@ export interface HomeDict {
   heroText: string;
   heroCtaEvents: string;
   heroCtaAbout: string;
-  stats: [string, string, string, string];
+  committees: [string, string, string, string];
   about: {
-    number: string;
     heading: [string, string];
     leadBefore: string;
     leadStrong: string;
@@ -47,29 +45,21 @@ export interface HomeDict {
     paragraphs: [string, string];
   };
   activities: {
-    number: string;
     heading: [string, string];
     cards: [Card, Card, Card];
   };
   events: {
-    number: string;
     heading: [string, string];
     viewAll: string;
     items: [EventItem, EventItem, EventItem];
   };
   join: {
-    number: string;
     heading: string;
     emphasis: string;
     text: string;
     cta: string;
   };
-  languagesSection: {
-    number: string;
-    heading: [string, string];
-  };
   contact: {
-    number: string;
     heading: string;
     text: string;
     instagram: string;
