@@ -4,7 +4,7 @@
 
 Sitio web de **ESN Santiago de Compostela**, orientado a estudiantes internacionales, movilidad, voluntariado, integración y actividades interculturales.
 
-> 🌍 **Connect · Discover · Experience**
+> 🌍 **Students Helping Students**
 
 ---
 

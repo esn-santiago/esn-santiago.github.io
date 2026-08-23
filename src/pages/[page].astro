@@ -1,9 +1,0 @@
----
-import Layout from '../layouts/Layout.astro';
-import SiteNavigation from '../components/SiteNavigation.astro';
-import { pages, pageContent, type PageSlug } from '../data/site';
-export function getStaticPaths() { return ['que-es-esn', 'erasmus-tips', 'esncard', 'eventos', 'blog', 'contacto', 'avisolegal', 'politicaprivacidad', 'TyC', 'metodos-de-pago'].map((page) => ({ params: { page } })); }
-const page = Astro.params.page as PageSlug;
-const content = pageContent('es', page);
----
-<Layout title={`${content.title} — ESN Santiago`}><SiteNavigation lang="es" /><main class="site-container content-page"><span class="section-number">ESN SANTIAGO</span><h1>{content.title}</h1><p>{content.text}</p>{page === 'esncard' && <iframe title="Solicitud ESNcard" frameborder="0" scrolling="yes" src="https://eventupp.eu/iframes/student-request/spain" style="min-height: 700px; overflow-y: scroll; width: 100%;"></iframe>}<a class="brutalist-button button-blue" href="/">Volver al inicio</a></main></Layout>

@@ -1,55 +1,127 @@
 ---
 import { Image } from 'astro:assets';
 import esnLogo from '../assets/esn-santiago-logo.png';
-import { languages, pages, type LanguageCode } from '../data/site';
+import { languages, languageCodes, defaultLang, langPrefix, localizedPath, getDictionary, pageSlugs, type LanguageCode } from '../i18n';
 
-const { lang = 'es' } = Astro.props as { lang?: LanguageCode };
-const prefix = lang === 'es' ? '' : `/${lang}`;
+const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
+const dict = getDictionary(lang);
+const nav = dict.nav;
+const prefix = langPrefix(lang);
 const link = (path: string) => `${prefix}/${path}`;
+
 const currentPath = Astro.url.pathname;
-const localePattern = new RegExp(`^/(?:${Object.keys(languages).join('|')})(?=/|$)`);
-const pagePath = currentPath.replace(localePattern, '') || '/';
-const knownPages = new Set(['/', ...Object.keys(pages).map((page) => `/${page}`)]);
-const navigation = {
-  es: { about: 'Qué es ESN', tips: 'Consejos Erasmus', events: 'Eventos', discounts: 'Descuentos', local: 'Descuentos locales', national: 'Descuentos nacionales', international: 'Descuentos internacionales', contact: 'Contacto', language: 'Idioma' },
-  en: { about: 'What is ESN', tips: 'Erasmus tips', events: 'Events', discounts: 'Discounts', local: 'Local discounts', national: 'National discounts', international: 'International discounts', contact: 'Contact', language: 'Language' },
-  gl: { about: 'Que é ESN', tips: 'Consellos Erasmus', events: 'Eventos', discounts: 'Descontos', local: 'Descontos locais', national: 'Descontos nacionais', international: 'Descontos internacionais', contact: 'Contacto', language: 'Idioma' },
-  fr: { about: 'Qu’est-ce qu’ESN', tips: 'Conseils Erasmus', events: 'Événements', discounts: 'Réductions', local: 'Réductions locales', national: 'Réductions nationales', international: 'Réductions internationales', contact: 'Contact', language: 'Langue' },
-  de: { about: 'Was ist ESN', tips: 'Erasmus-Tipps', events: 'Veranstaltungen', discounts: 'Rabatte', local: 'Lokale Rabatte', national: 'Nationale Rabatte', international: 'Internationale Rabatte', contact: 'Kontakt', language: 'Sprache' },
-  pt: { about: 'O que é a ESN', tips: 'Dicas Erasmus', events: 'Eventos', discounts: 'Descontos', local: 'Descontos locais', national: 'Descontos nacionais', international: 'Descontos internacionais', contact: 'Contacto', language: 'Idioma' },
-  it: { about: 'Cos’è ESN', tips: 'Consigli Erasmus', events: 'Eventi', discounts: 'Sconti', local: 'Sconti locali', national: 'Sconti nazionali', international: 'Sconti internazionali', contact: 'Contatti', language: 'Lingua' },
-} as const;
-const nav = navigation[lang];
-const languageLink = (code: string) => {
-  const targetPath = knownPages.has(pagePath) ? pagePath : `/en${pagePath}`;
-  return knownPages.has(pagePath) ? `/${code}${targetPath === '/' ? '/' : targetPath}` : targetPath;
-};
+const localePattern = new RegExp(`^/(?:${languageCodes.filter((code) => code !== defaultLang).join('|')})(?=/|$)`);
+const pagePath = currentPath.replace(localePattern, '').replace(/\/$/, '') || '/';
+const knownPaths = new Set(['/', ...pageSlugs.map((slug) => `/${slug}`)]);
+const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localizedPath(code, pagePath === '/' ? '' : pagePath.slice(1)) : localizedPath(code));
 ---
 
 <div class="esn-color-bar" aria-hidden="true"><span class="esn-blue"></span><span class="esn-pink"></span><span class="esn-green"></span><span class="esn-orange"></span><span class="esn-blue"></span><span class="esn-pink"></span><span class="esn-green"></span><span class="esn-orange"></span><span class="esn-blue"></span><span class="esn-pink"></span><span class="esn-green"></span><span class="esn-orange"></span></div>
+
 <header class="site-header">
   <div class="site-header-inner">
     <a href={prefix || '/'} class="brand"><Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" /></a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href={link('que-es-esn')}>{nav.about}</a><a href={link('erasmus-tips')}>{nav.tips}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{nav.events}</a>
-      <div class="nav-dropdown"><button class="nav-dropdown-trigger" type="button" aria-expanded="false">{nav.discounts}</button><div class="nav-dropdown-menu"><a href={link('descuentos/locales')}>{nav.local}</a><a href={link('descuentos/nacionales')}>{nav.national}</a><a href={link('descuentos/internacionales')}>{nav.international}</a></div></div>
-      <a href={link('blog')}>Blog</a><a href={link('contacto')}>{nav.contact}</a>
-      <label class="language-switcher"><span class="sr-only">{nav.language}</span><select data-language-select aria-label={nav.language}>{Object.entries(languages).map(([code, name]) => <option value={languageLink(code)} selected={code === lang}>{name}</option>)}</select></label>
+
+    <nav class="desktop-nav" aria-label={nav.mainNav}>
+      <a href={link('que-es-esn')}>{nav.about}</a>
+      <a href={link('erasmus-tips')}>{nav.tips}</a>
+      <a href={link('esncard')}>{nav.esncard}</a>
+      <a href={link('eventos')}>{nav.events}</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" type="button" aria-expanded="false"><span>{nav.discounts}</span></button>
+        <div class="nav-dropdown-menu">
+          <a href={link('descuentos/locales')}><strong>{nav.local}</strong></a>
+          <a href={link('descuentos/nacionales')}><strong>{nav.national}</strong></a>
+          <a href={link('descuentos/internacionales')}><strong>{nav.international}</strong></a>
+        </div>
+      </div>
+
+      <a href={link('blog')}>{nav.blog}</a>
+      <a href={link('contacto')}>{nav.contact}</a>
+
+      <label class="language-switcher">
+        <span class="sr-only">{nav.language}</span>
+        <select data-language-select aria-label={nav.language}>
+          {languageCodes.map((code) => <option value={languageLink(code)} selected={code === lang}>{languages[code]}</option>)}
+        </select>
+      </label>
     </nav>
-    <button class="mobile-menu-button" data-mobile-menu-button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+
+    <button class="mobile-menu-button" data-mobile-menu-button type="button" aria-label={nav.openMenu} aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+
 <div class="header-bottom-line"></div>
-<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
-  <a href={link('que-es-esn')}>{nav.about}</a><a href={link('erasmus-tips')}>{nav.tips}</a><a href={link('esncard')}>ESNcard</a><a href={link('eventos')}>{nav.events}</a>
-  <div class="mobile-menu-group"><button class="mobile-submenu-trigger" type="button" aria-expanded="false">{nav.discounts} <span class="mobile-submenu-icon">+</span></button><div class="mobile-submenu"><a href={link('descuentos/locales')}>{nav.local}</a><a href={link('descuentos/nacionales')}>{nav.national}</a><a href={link('descuentos/internacionales')}>{nav.international}</a></div></div>
-  <a href={link('blog')}>Blog</a><a href={link('contacto')}>{nav.contact}</a>
-  <div class="mobile-language-list"><span>{nav.language}</span>{Object.entries(languages).map(([code, name]) => <a href={languageLink(code)} aria-current={code === lang ? 'page' : undefined}>{name}</a>)}</div>
+
+<nav id="mobile-menu" class="mobile-menu" aria-label={nav.mobileNav}>
+  <a href={link('que-es-esn')}>{nav.about}</a>
+  <a href={link('erasmus-tips')}>{nav.tips}</a>
+  <a href={link('esncard')}>{nav.esncard}</a>
+  <a href={link('eventos')}>{nav.events}</a>
+
+  <div class="mobile-menu-group">
+    <button class="mobile-submenu-trigger" type="button" aria-expanded="false"><span>{nav.discounts}</span> <span class="mobile-submenu-icon">+</span></button>
+    <div class="mobile-submenu">
+      <a href={link('descuentos/locales')}>{nav.local}</a>
+      <a href={link('descuentos/nacionales')}>{nav.national}</a>
+      <a href={link('descuentos/internacionales')}>{nav.international}</a>
+    </div>
+  </div>
+
+  <a href={link('blog')}>{nav.blog}</a>
+  <a href={link('contacto')}>{nav.contact}</a>
+
+  <div class="mobile-language-list">
+    <span>{nav.language}</span>
+    {languageCodes.map((code) => <a href={languageLink(code)} aria-current={code === lang ? 'page' : undefined}>{languages[code]}</a>)}
+  </div>
 </nav>
+
 <script>
-  const button = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
-  const menu = document.getElementById('mobile-menu');
-  button?.addEventListener('click', () => { const open = menu?.classList.toggle('is-open') ?? false; button.classList.toggle('is-open', open); button.setAttribute('aria-expanded', String(open)); button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
-  document.querySelector<HTMLButtonElement>('.mobile-submenu-trigger')?.addEventListener('click', (event) => { const trigger = event.currentTarget; const submenu = trigger.parentElement?.querySelector('.mobile-submenu'); const open = submenu?.classList.toggle('is-open') ?? false; trigger.setAttribute('aria-expanded', String(open)); const icon = trigger.querySelector('.mobile-submenu-icon'); if (icon) icon.textContent = open ? '−' : '+'; });
-  document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => select.addEventListener('change', () => { window.location.href = select.value; }));
+  const menuButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuButton?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open') ?? false;
+    menuButton.classList.toggle('is-open', isOpen);
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  const dropdownTrigger = document.querySelector<HTMLButtonElement>('.nav-dropdown-trigger');
+  const dropdown = document.querySelector('.nav-dropdown');
+  dropdownTrigger?.addEventListener('click', () => {
+    const isOpen = dropdown?.classList.toggle('is-open') ?? false;
+    dropdownTrigger.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', (event) => {
+    const target = event.target as Node;
+    if (dropdown && !dropdown.contains(target)) {
+      dropdown.classList.remove('is-open');
+      dropdownTrigger?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  const mobileDiscountsButton = document.querySelector<HTMLButtonElement>('.mobile-submenu-trigger');
+  mobileDiscountsButton?.addEventListener('click', (event) => {
+    const trigger = event.currentTarget as HTMLButtonElement;
+    const submenu = trigger.parentElement?.querySelector('.mobile-submenu');
+    const isOpen = submenu?.classList.toggle('is-open') ?? false;
+    trigger.setAttribute('aria-expanded', String(isOpen));
+    const icon = trigger.querySelector('.mobile-submenu-icon');
+    if (icon) icon.textContent = isOpen ? '−' : '+';
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((anchor) => {
+    anchor.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      menuButton?.classList.remove('is-open');
+      menuButton?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => {
+    select.addEventListener('change', () => {
+      window.location.href = select.value;
+    });
+  });
 </script>

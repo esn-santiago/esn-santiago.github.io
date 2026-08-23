@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNavigation from '../../components/SiteNavigation.astro';
+import HomePage from '../../components/HomePage.astro';
+import { languageCodes, defaultLang, languages, type LanguageCode } from '../../i18n';
+
+export function getStaticPaths() {
+  return languageCodes.map((code) => ({
+    params: { lang: code === defaultLang ? undefined : code },
+  }));
+}
+
+const lang = (Astro.params.lang as LanguageCode | undefined) ?? defaultLang;
+---
+
+<Layout lang={lang} title={`ESN Santiago de Compostela — ${languages[lang]}`}>
+  <SiteNavigation lang={lang} />
+  <HomePage lang={lang} />
+</Layout>

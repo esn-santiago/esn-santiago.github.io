@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNavigation from '../../components/SiteNavigation.astro';
+import { languageCodes, defaultLang, languages, pageSlugs, getDictionary, langPrefix, type LanguageCode, type PageSlug } from '../../i18n';
+
+export function getStaticPaths() {
+  return languageCodes
+    .filter((code) => code !== defaultLang)
+    .flatMap((code) => pageSlugs.map((slug) => ({ params: { lang: code, slug } })));
+}
+
+const lang = Astro.params.lang as LanguageCode;
+const slug = Astro.params.slug as PageSlug;
+const dict = getDictionary(lang);
+const content = dict.pages[slug];
+const prefix = langPrefix(lang);
+---
+
+<Layout lang={lang} title={`${content.title} — ESN Santiago`}>
+  <SiteNavigation lang={lang} />
+  <main class="site-container content-page">
+    <span class="section-number">ESN SANTIAGO · {languages[lang]}</span>
+    <h1>{content.title}</h1>
+    <p>{content.text}</p>
+    {slug === 'esncard' && (
+      <iframe
+        title="ESNcard request"
+        frameborder="0"
+        scrolling="yes"
+        src="https://eventupp.eu/iframes/student-request/spain"
+        style="min-height: 700px; overflow-y: scroll; width: 100%;"
+      />
+    )}
+    <a class="brutalist-button button-blue" href={prefix || '/'}>{dict.nav.backHome}</a>
+  </main>
+</Layout>
