@@ -22,7 +22,7 @@ jobs:
 
     env:
       SITE_URL: https://esn-santiago.github.io
-      BASE_PATH: /esn-santiago.github.io
+      BASE_PATH: /
       PUBLIC_BOOKING_URL: ${{ vars.PUBLIC_BOOKING_URL || secrets.PUBLIC_BOOKING_URL }}
       PUBLIC_RSVP_COUNT_URL: ${{ vars.PUBLIC_RSVP_COUNT_URL || secrets.PUBLIC_RSVP_COUNT_URL }}
 
@@ -41,14 +41,21 @@ jobs:
           node-version: 24
           cache: pnpm
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Build site
         run: pnpm build
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          echo "Build OK"
+          echo "Contents of dist:"
+          find dist -maxdepth 2 -type f | sort
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
