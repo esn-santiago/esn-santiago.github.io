@@ -20,6 +20,23 @@ const content = dict.pages[slug];
   <main class="site-container content-page">
     <h1>{content.title}</h1>
     <p>{content.text}</p>
+    {content.body && (
+      <div class="legal-content">
+        {content.body.map((block) =>
+          block.type === 'heading' ? (
+            block.level === 2 ? <h2>{block.text}</h2> : <h3>{block.text}</h3>
+          ) : block.type === 'list' ? (
+            <ul>
+              {block.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{block.text}</p>
+          )
+        )}
+      </div>
+    )}
     {slug === 'esncard' && (
       <iframe
         title="ESNcard request"

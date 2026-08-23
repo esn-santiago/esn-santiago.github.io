@@ -91,8 +91,13 @@ interface EventItem {
   location: string;
 }
 
+export type ContentBlock =
+  | { type: 'heading'; level: 2 | 3; text: string }
+  | { type: 'paragraph'; text: string }
+  | { type: 'list'; items: string[] };
+
 export interface Dictionary {
   nav: NavDict;
   home: HomeDict;
-  pages: Record<PageSlug, { title: string; text: string }>;
+  pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[] }>;
 }
