@@ -1,0 +1,19 @@
+---
+const methods = [
+  { name: 'Mastercard', image: '/payment-methods/mastercard.png' },
+  { name: 'Visa', image: '/payment-methods/visa.png' },
+  { name: 'Google Pay', image: '/payment-methods/google-pay.png' },
+  { name: 'Apple Pay', image: '/payment-methods/apple-pay.png' },
+] as const;
+---
+
+<div class="payment-methods-grid">
+  {methods.map((method) => (
+    <div class="payment-method-card">
+      <div class="payment-method-icon">
+        <img src={method.image} alt={method.name} loading="lazy" />
+      </div>
+      <span class="payment-method-label">{method.name}</span>
+    </div>
+  ))}
+</div>

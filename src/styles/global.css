@@ -775,6 +775,60 @@ p {
 	line-height: 1.6;
 }
 
+.payment-methods-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	max-width: 800px;
+	margin-top: 8px;
+}
+
+.payment-method-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	min-height: 130px;
+	padding: 24px 16px;
+	border: 3px solid var(--border);
+	border-radius: 16px;
+	background: white;
+	box-shadow: 6px 6px 0 var(--border);
+	transition: transform 0.15s ease;
+}
+
+.payment-method-card:hover {
+	transform: translate(-3px, -3px);
+}
+
+.payment-method-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 100%;
+}
+
+.payment-method-icon img {
+	max-height: 40px;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.payment-method-label {
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-align: center;
+	color: #444;
+}
+
+@media (max-width: 640px) {
+	.payment-methods-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 
 /* =========================================================
    HERO

@@ -1,0 +1,81 @@
+---
+import { getDictionary, langPrefix, defaultLang, type LanguageCode } from '../i18n';
+
+const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
+const dict = getDictionary(lang);
+const { footer } = dict.home;
+const prefix = langPrefix(lang);
+const path = (slug: string) => `${prefix}/${slug}`;
+
+const icons = {
+  Flickr: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><circle cx="7.5" cy="12" r="3.5"/><circle cx="16.5" cy="12" r="3.5"/></svg>',
+  Instagram: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  Facebook: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M13.7 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H8v3.1h2.5v8h3.2Z"/></svg>',
+  X: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4 4h4.2l4.1 5.5L17 4h3l-6.3 7.2L20.5 20h-4.2l-4.5-6-5.1 6h-3l6.9-7.8L4 4Zm3.4 1.8 9.8 12.4h1.8L9.2 5.8H7.4Z"/></svg>',
+  LinkedIn: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><rect x="3.5" y="8.5" width="3.4" height="11.5" rx=".3"/><circle cx="5.2" cy="5.2" r="1.7"/><path d="M10.2 8.5V20h3.4v-6.2c0-1.7.3-3.2 2.4-3.2 2 0 2.1 1.7 2.1 3.3V20h3.4v-6.8c0-3.4-.7-6-4.7-6-1.9 0-3.1 1-3.6 1.9h-.1V8.5h-2.9Z"/></svg>',
+  TikTok: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M14.2 3.5h3.1c.3 1.9 1.2 3.4 3.1 4.3v3.2a9 9 0 0 1-3.1-1.2v5.5a5.7 5.7 0 1 1-5.7-5.7c.4 0 .8 0 1.2.1v3.2a2.7 2.7 0 1 0 1.4 2.4V3.5Z"/></svg>',
+} as const;
+
+const socials = [
+  { name: 'Flickr', href: 'https://www.flickr.com/photos/people/esnsantiago/', hoverBg: 'linear-gradient(135deg,#ff0084 50%,#0063dc 50%)', hoverColor: '#fff', hoverBorder: 'transparent' },
+  { name: 'Instagram', href: 'https://www.instagram.com/esn_santiagodecompostela/?hl=es', hoverBg: 'linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)', hoverColor: '#ffffff', hoverBorder: 'transparent' },
+  { name: 'Facebook', href: 'https://www.facebook.com/esnsantiagodecompostela/', hoverBg: '#1877F2', hoverColor: '#fff', hoverBorder: 'transparent' },
+  { name: 'X', href: 'https://x.com/esn_santiago', hoverBg: '#000000', hoverColor: '#ffffff', hoverBorder: 'transparent' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/esn-santiagodecompostela', hoverBg: '#0A66C2', hoverColor: '#fff', hoverBorder: 'transparent' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@esn.santiagodecompostela?is_from_webapp=1&sender_device=pc', hoverBg: '#010101', hoverColor: '#25F4EE', hoverBorder: '#25F4EE' },
+] as const satisfies { name: keyof typeof icons; href: string; hoverBg: string; hoverColor: string; hoverBorder: string }[];
+---
+
+<footer class="site-footer site-container" style="display:flex;justify-content:space-between;align-items:flex-end;gap:48px;padding:56px 0 40px;">
+  <div style="flex:0 0 auto;">
+    <div style="display:flex;align-items:center;gap:10px;margin:0 0 12px;">
+      <img src="/favicon-32x32.png" alt="" width="24" height="24" style="display:block;" />
+      <strong style="font-size:1.1rem;font-weight:900;letter-spacing:.04em;">ESN Santiago de Compostela</strong>
+    </div>
+    <p style="margin:0;font-size:.85rem;line-height:1.6;opacity:.65;">{footer.tagline}<br />{footer.address}</p>
+  </div>
+
+  <div class="footer-right" style="display:flex;flex-direction:column;align-items:flex-end;gap:28px;">
+    <nav aria-label="Social">
+      <ul style="display:flex;align-items:center;justify-content:flex-end;gap:10px;margin:0;padding:0;list-style:none;">
+        {socials.map((social) => (
+          <li style="margin:0;padding:0;">
+            <a
+              href={social.href}
+              target={social.href.startsWith('http') ? '_blank' : undefined}
+              rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              aria-label={`${social.name} — ${footer.opensInNewTab}`}
+              title={social.name}
+              style={`width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:50%;opacity:.8;transition:all .2s ease;`}
+              onmouseover={`this.style.background='${social.hoverBg}';this.style.borderColor='${social.hoverBorder}';this.style.color='${social.hoverColor}';this.style.transform='translateY(-4px)';this.style.opacity='1'`}
+              onmouseout="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.transform='translateY(0)';this.style.opacity='.8'"
+              onfocus={`this.style.background='${social.hoverBg}';this.style.borderColor='${social.hoverBorder}';this.style.color='${social.hoverColor}';this.style.opacity='1'`}
+              onblur="this.style.background='transparent';this.style.borderColor='currentColor';this.style.color='inherit';this.style.opacity='.8'"
+              set:html={icons[social.name]}
+            />
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav aria-label={footer.legal[0]} style="display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;">
+      {[
+        [path('avisolegal'), footer.legal[0]],
+        [path('politicaprivacidad'), footer.legal[1]],
+        [path('TyC'), footer.legal[2]],
+        [path('metodos-de-pago'), footer.legal[3]],
+      ].map(([href, label]) => (
+        <a
+          href={href}
+          style="color:inherit;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-decoration:none;opacity:.55;transition:color .2s ease,opacity .2s ease;"
+          onmouseover="this.style.color='#ec008c';this.style.opacity='1'"
+          onmouseout="this.style.color='inherit';this.style.opacity='.55'"
+          onfocus="this.style.color='#ec008c';this.style.opacity='1'"
+          onblur="this.style.color='inherit';this.style.opacity='.55'"
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</footer>
