@@ -839,7 +839,7 @@ p {
 
 	margin-left: calc(50% - 50vw);
 
-	border-bottom: 3px solid var(--border);
+	border-bottom: 3px solid #ffffff;
 }
 
 .hero-labels {
@@ -880,7 +880,7 @@ p {
 }
 
 .hero h1 {
-	font-size: clamp(3.5rem, 13vh, 9.5rem);
+	font-size: clamp(3.5rem, 8vw, 7rem);
 }
 
 .hero h1 span {
