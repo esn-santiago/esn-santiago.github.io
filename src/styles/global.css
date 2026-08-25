@@ -767,6 +767,8 @@ p {
 .legal-content ul {
 	margin: 0 0 20px;
 	padding-left: 24px;
+	list-style-type: square;
+	color: #111111;
 }
 
 .legal-content li {

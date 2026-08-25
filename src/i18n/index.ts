@@ -26,7 +26,7 @@ export const defaultLang: LanguageCode = 'es';
 export const languageCodes = Object.keys(languages) as LanguageCode[];
 
 export const pageSlugs: PageSlug[] = [
-  'que-es-esn',
+  'about',
   'erasmus-tips',
   'esncard',
   'eventos',

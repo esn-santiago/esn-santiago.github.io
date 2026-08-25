@@ -34,7 +34,7 @@ const fr: Dictionary = {
     activities: {
       heading: ['Découvre', 'ESN.'],
       cards: [
-        { icon: '🌍', title: 'International', text: 'Rencontre des étudiants du monde entier et intègre une communauté internationale à Saint-Jacques-de-Compostelle.', cta: 'Découvrir →', href: 'que-es-esn' },
+        { icon: '🌍', title: 'International', text: 'Rencontre des étudiants du monde entier et intègre une communauté internationale à Saint-Jacques-de-Compostelle.', cta: 'Découvrir →', href: 'about' },
         { icon: '🎉', title: 'Events', text: 'Fêtes, activités culturelles, sport, rencontres et expériences à partager.', cta: 'Voir les événements →', href: 'eventos' },
         { icon: '🤝', title: 'Volunteering', text: 'Deviens bénévole et aide à construire une meilleure expérience Erasmus pour tous.', cta: 'Participer →', href: 'contacto' },
       ],
@@ -69,7 +69,29 @@ const fr: Dictionary = {
     },
   },
   pages: {
-    'que-es-esn': { title: "Qu'est-ce qu'ESN ?", text: 'ESN Santiago accompagne les étudiants internationaux et aide à construire une communauté accueillante à Saint-Jacques-de-Compostelle.' },
+    about: {
+      title: "Qu'est-ce qu'ESN ?",
+      text: 'ESN Santiago accompagne les étudiants internationaux et aide à construire une communauté accueillante à Saint-Jacques-de-Compostelle.',
+      body: [
+        {
+          type: 'paragraph',
+          text: "Erasmus Student Network (ESN) est une association à but non lucratif composée d'étudiants universitaires qui œuvre pour l'aide et le développement des échanges étudiants. Fondée en 1989, elle est aujourd'hui l'une des plus grandes associations interdisciplinaires d'Europe. Nous sommes présents dans 520 établissements de 42 pays.",
+        },
+        { type: 'paragraph', text: 'ESN travaille et coopère avec les universités :' },
+        {
+          type: 'list',
+          items: [
+            'En offrant des services à 300 000 étudiants.',
+            'En reposant principalement sur le bénévolat.',
+            'Avec une croissance annuelle moyenne de 12,3 % depuis 1990.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: "En tant qu'association, ESN fonctionne à trois niveaux : local, national et international. Nos bénévoles travaillent dans l'intention de créer un environnement éducatif plus mobile et flexible, en soutenant et en développant l'échange d'étudiants à différents niveaux, et en offrant une expérience interculturelle également aux étudiants qui ne peuvent pas accéder à une période à l'étranger (« internationalisation à la maison »).",
+        },
+      ],
+    },
     'erasmus-tips': {
       title: 'Conseils Erasmus',
       text: "Des conseils utiles pour t'installer, découvrir la ville et profiter pleinement de ton expérience Erasmus.",

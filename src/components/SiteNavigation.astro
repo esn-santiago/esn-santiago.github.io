@@ -23,7 +23,7 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
     <a href={prefix || '/'} class="brand"><Image src={esnLogo} alt="ESN Santiago de Compostela" class="brand-logo" /></a>
 
     <nav class="desktop-nav" aria-label={nav.mainNav}>
-      <a href={link('que-es-esn')}>{nav.about}</a>
+      <a href={link('about')}>{nav.about}</a>
       <a href={link('erasmus-tips')}>{nav.tips}</a>
       <a href={link('esncard')}>{nav.esncard}</a>
       <a href={link('eventos')}>{nav.events}</a>
@@ -44,7 +44,7 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
 </header>
 
 <nav id="mobile-menu" class="mobile-menu" aria-label={nav.mobileNav}>
-  <a href={link('que-es-esn')}>{nav.about}</a>
+  <a href={link('about')}>{nav.about}</a>
   <a href={link('erasmus-tips')}>{nav.tips}</a>
   <a href={link('esncard')}>{nav.esncard}</a>
   <a href={link('eventos')}>{nav.events}</a>

@@ -1,5 +1,5 @@
 export type PageSlug =
-  | 'que-es-esn'
+  | 'about'
   | 'erasmus-tips'
   | 'esncard'
   | 'eventos'

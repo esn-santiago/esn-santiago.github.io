@@ -34,7 +34,7 @@ const gl: Dictionary = {
     activities: {
       heading: ['Descubre', 'ESN.'],
       cards: [
-        { icon: '🌍', title: 'International', text: 'Coñece estudantes de todo o mundo e forma parte dunha comunidade internacional en Santiago.', cta: 'Descubrir →', href: 'que-es-esn' },
+        { icon: '🌍', title: 'International', text: 'Coñece estudantes de todo o mundo e forma parte dunha comunidade internacional en Santiago.', cta: 'Descubrir →', href: 'about' },
         { icon: '🎉', title: 'Events', text: 'Festas, actividades culturais, deporte, encontros e experiencias para compartir.', cta: 'Ver eventos →', href: 'eventos' },
         { icon: '🤝', title: 'Volunteering', text: 'Participa como voluntario e axuda a construír unha mellor experiencia Erasmus para todos.', cta: 'Participar →', href: 'contacto' },
       ],
@@ -69,7 +69,29 @@ const gl: Dictionary = {
     },
   },
   pages: {
-    'que-es-esn': { title: 'Que é ESN', text: 'ESN Santiago acompaña o estudantado internacional para crear comunidade en Santiago.' },
+    about: {
+      title: 'Que é ESN',
+      text: 'ESN Santiago acompaña o estudantado internacional para crear comunidade en Santiago.',
+      body: [
+        {
+          type: 'paragraph',
+          text: 'Erasmus Student Network (ESN) é unha asociación sen ánimo de lucro formada por estudantes universitarios que traballa para a axuda e o desenvolvemento do intercambio de estudantes. Fundada en 1989, hoxe en día é unha das maiores asociacións interdisciplinarias en Europa. Estamos presentes en 520 institucións de 42 países.',
+        },
+        { type: 'paragraph', text: 'ESN traballa e coopera coas Universidades:' },
+        {
+          type: 'list',
+          items: [
+            'Ofrecendo servizos a 300.000 estudantes.',
+            'Baseada principalmente no voluntariado.',
+            'Cunha media crecente anual de 12,3% desde 1990.',
+          ],
+        },
+        {
+          type: 'paragraph',
+          text: 'Como asociación, ESN funciona en tres niveis: Local, Nacional e Internacional. Os nosos voluntarios traballan coa intención de crear unha contorna educativa máis móbil e flexible, apoiando e desenvolvendo o intercambio de estudantes de diferentes niveis, e proporcionando unha experiencia intercultural tamén a aqueles estudantes que non poden acceder a un período no estranxeiro ("internacionalización na casa").',
+        },
+      ],
+    },
     'erasmus-tips': {
       title: 'Consellos Erasmus',
       text: 'Consellos útiles para instalarte, descubrir a cidade e aproveitar ao máximo a túa experiencia Erasmus.',
