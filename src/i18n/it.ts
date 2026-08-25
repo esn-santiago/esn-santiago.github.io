@@ -5,6 +5,10 @@ const it: Dictionary = {
     about: "Cos'è ESN",
     tips: 'Consigli Erasmus',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'Tutti gli sconti',
+    esncardLocalDiscounts: 'Sconti locali',
+    esncardInternationalDiscounts: 'Sconti internazionali',
+    esncardTravelDiscounts: 'Sconti viaggio',
     events: 'Eventi',
     blog: 'Blog',
     contact: 'Contatti',
@@ -103,7 +107,31 @@ const it: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: 'Scopri la ESNcard e tutti i vantaggi, le attività e gli sconti a tua disposizione.' },
+    esncard: {
+      title: 'ESNcard',
+      text: 'Scopri la ESNcard e tutti i vantaggi, le attività e gli sconti a tua disposizione.',
+      cta: 'Richiedi la tua ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: "Cos'è la ESNcard?" },
+        { type: 'paragraph', text: "La ESNcard è la tessera ufficiale di socio dell'Erasmus Student Network." },
+        {
+          type: 'paragraph',
+          text: "Dà agli studenti internazionali accesso a un'ampia gamma di sconti e vantaggi in tutta Europa, tra cui trasporti, viaggi, alloggio, attività ricreative e offerte di partner locali.",
+        },
+        {
+          type: 'paragraph',
+          text: 'La ESNcard è inoltre necessaria per partecipare a molti viaggi e attività organizzati da ESN Santiago de Compostela.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Puoi consultare tutti gli sconti e i partner disponibili su esncard.org. La ESNcard costa 20€ ed è valida 12 mesi dalla data di emissione.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Completa il modulo di iscrizione per richiedere la tua ESNcard. Ti forniremo le informazioni necessarie per ritirarla presso ESN Santiago de Compostela.',
+        },
+      ],
+    },
     eventos: { title: 'Eventi', text: 'Scopri le prossime attività, i viaggi e gli incontri della nostra comunità.' },
     blog: {
       title: 'Blog',

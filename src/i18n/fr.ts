@@ -5,6 +5,10 @@ const fr: Dictionary = {
     about: "Qu'est-ce qu'ESN",
     tips: 'Conseils Erasmus',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'Toutes les réductions',
+    esncardLocalDiscounts: 'Réductions locales',
+    esncardInternationalDiscounts: 'Réductions internationales',
+    esncardTravelDiscounts: 'Réductions voyage',
     events: 'Événements',
     blog: 'Blog',
     contact: 'Contact',
@@ -103,7 +107,31 @@ const fr: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: "Découvre l'ESNcard et tous les avantages, activités et réductions disponibles pour toi." },
+    esncard: {
+      title: 'ESNcard',
+      text: "Découvre l'ESNcard et tous les avantages, activités et réductions disponibles pour toi.",
+      cta: 'Demande ta ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: "Qu'est-ce que la ESNcard ?" },
+        { type: 'paragraph', text: "La ESNcard est la carte officielle de membre de l'Erasmus Student Network." },
+        {
+          type: 'paragraph',
+          text: "Elle donne aux étudiants internationaux accès à un large éventail de réductions et d'avantages dans toute l'Europe, notamment sur les transports, les voyages, l'hébergement, les loisirs et les offres de partenaires locaux.",
+        },
+        {
+          type: 'paragraph',
+          text: 'La ESNcard est également nécessaire pour participer à de nombreux voyages et activités organisés par ESN Santiago de Compostela.',
+        },
+        {
+          type: 'paragraph',
+          text: "Tu peux consulter toutes les réductions et tous les partenaires disponibles sur esncard.org. La ESNcard coûte 20 € et est valable 12 mois à compter de sa date d'émission.",
+        },
+        {
+          type: 'paragraph',
+          text: "Complète le formulaire d'inscription pour demander ta ESNcard. Nous te fournirons les informations nécessaires pour la récupérer auprès d'ESN Santiago de Compostela.",
+        },
+      ],
+    },
     eventos: { title: 'Événements', text: 'Découvre les prochaines activités, voyages et rencontres de notre communauté.' },
     blog: {
       title: 'Blog',

@@ -14,6 +14,10 @@ export interface NavDict {
   about: string;
   tips: string;
   esncard: string;
+  esncardAllDiscounts: string;
+  esncardLocalDiscounts: string;
+  esncardInternationalDiscounts: string;
+  esncardTravelDiscounts: string;
   events: string;
   blog: string;
   contact: string;
@@ -102,5 +106,5 @@ export interface BlogPost {
 export interface Dictionary {
   nav: NavDict;
   home: HomeDict;
-  pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[]; posts?: BlogPost[] }>;
+  pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[]; posts?: BlogPost[]; cta?: string }>;
 }

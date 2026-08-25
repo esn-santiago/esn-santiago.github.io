@@ -25,7 +25,19 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
     <nav class="desktop-nav" aria-label={nav.mainNav}>
       <a href={link('about')}>{nav.about}</a>
       <a href={link('erasmus-tips')}>{nav.tips}</a>
-      <a href={link('esncard')}>{nav.esncard}</a>
+
+      <div class="nav-dropdown">
+        <a href={link('esncard')} class="nav-dropdown-trigger">
+          <span>{nav.esncard}</span>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="https://esncard.org" target="_blank" rel="noopener noreferrer">{nav.esncardAllDiscounts}</a>
+          <a href="https://esncard.org/discover/list?query=Santiago%20de%20compostela" target="_blank" rel="noopener noreferrer">{nav.esncardLocalDiscounts}</a>
+          <a href="https://esncard.org/discover/list?f%5B0%5D=field_discount_scope%3A3" target="_blank" rel="noopener noreferrer">{nav.esncardInternationalDiscounts}</a>
+          <a href="https://esncard.org/discover/list?f%5B0%5D=field_discount_category%3A52" target="_blank" rel="noopener noreferrer">{nav.esncardTravelDiscounts}</a>
+        </div>
+      </div>
+
       <a href={link('eventos')}>{nav.events}</a>
 
       <a href={link('blog')}>{nav.blog}</a>
@@ -46,7 +58,22 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
 <nav id="mobile-menu" class="mobile-menu" aria-label={nav.mobileNav}>
   <a href={link('about')}>{nav.about}</a>
   <a href={link('erasmus-tips')}>{nav.tips}</a>
-  <a href={link('esncard')}>{nav.esncard}</a>
+
+  <div class="mobile-menu-group">
+    <div class="mobile-menu-group-header">
+      <a href={link('esncard')}>{nav.esncard}</a>
+      <button class="mobile-submenu-trigger" type="button" aria-expanded="false" aria-label={nav.esncard}>
+        <span class="mobile-submenu-icon">+</span>
+      </button>
+    </div>
+    <div class="mobile-submenu">
+      <a href="https://esncard.org" target="_blank" rel="noopener noreferrer">{nav.esncardAllDiscounts}</a>
+      <a href="https://esncard.org/discover/list?query=Santiago%20de%20compostela" target="_blank" rel="noopener noreferrer">{nav.esncardLocalDiscounts}</a>
+      <a href="https://esncard.org/discover/list?f%5B0%5D=field_discount_scope%3A3" target="_blank" rel="noopener noreferrer">{nav.esncardInternationalDiscounts}</a>
+      <a href="https://esncard.org/discover/list?f%5B0%5D=field_discount_category%3A52" target="_blank" rel="noopener noreferrer">{nav.esncardTravelDiscounts}</a>
+    </div>
+  </div>
+
   <a href={link('eventos')}>{nav.events}</a>
 
   <a href={link('blog')}>{nav.blog}</a>
@@ -65,6 +92,15 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
     const isOpen = mobileMenu?.classList.toggle('is-open') ?? false;
     menuButton.classList.toggle('is-open', isOpen);
     menuButton.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  const submenuTrigger = document.querySelector<HTMLButtonElement>('.mobile-submenu-trigger');
+  submenuTrigger?.addEventListener('click', () => {
+    const submenu = submenuTrigger.closest('.mobile-menu-group')?.querySelector('.mobile-submenu');
+    const isOpen = submenu?.classList.toggle('is-open') ?? false;
+    submenuTrigger.setAttribute('aria-expanded', String(isOpen));
+    const icon = submenuTrigger.querySelector('.mobile-submenu-icon');
+    if (icon) icon.textContent = isOpen ? '−' : '+';
   });
 
   mobileMenu?.querySelectorAll('a').forEach((anchor) => {

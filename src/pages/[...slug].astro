@@ -30,6 +30,9 @@ function parsePostBlocks(text: string) {
   <main class="site-container content-page">
     <h1>{content.title}</h1>
     <p>{content.text}</p>
+    {slug === 'esncard' && content.cta && (
+      <a href="/esncard-form" class="brutalist-button button-green esncard-cta">{content.cta}</a>
+    )}
     {content.body && (
       <div class="legal-content">
         {content.body.map((block) =>
@@ -46,15 +49,6 @@ function parsePostBlocks(text: string) {
           )
         )}
       </div>
-    )}
-    {slug === 'esncard' && (
-      <iframe
-        title="Solicitud ESNcard"
-        frameborder="0"
-        scrolling="yes"
-        src="https://eventupp.eu/iframes/student-request/spain"
-        style="min-height: 700px; overflow-y: scroll; width: 100%;"
-      />
     )}
     {slug === 'metodos-de-pago' && <PaymentMethods />}
     {content.posts && (

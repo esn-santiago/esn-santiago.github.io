@@ -5,6 +5,10 @@ const de: Dictionary = {
     about: 'Was ist ESN',
     tips: 'Erasmus-Tipps',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'Alle Rabatte',
+    esncardLocalDiscounts: 'Lokale Rabatte',
+    esncardInternationalDiscounts: 'Internationale Rabatte',
+    esncardTravelDiscounts: 'Reiserabatte',
     events: 'Veranstaltungen',
     blog: 'Blog',
     contact: 'Kontakt',
@@ -103,7 +107,31 @@ const de: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: 'Erfahre mehr über die ESNcard und alle Vorteile, Aktivitäten und Rabatte, die dir zur Verfügung stehen.' },
+    esncard: {
+      title: 'ESNcard',
+      text: 'Erfahre mehr über die ESNcard und alle Vorteile, Aktivitäten und Rabatte, die dir zur Verfügung stehen.',
+      cta: 'Hol dir deine ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: 'Was ist die ESNcard?' },
+        { type: 'paragraph', text: 'Die ESNcard ist der offizielle Mitgliedsausweis des Erasmus Student Network.' },
+        {
+          type: 'paragraph',
+          text: 'Sie gibt internationalen Studierenden Zugang zu einer Vielzahl von Rabatten und Vorteilen in ganz Europa, unter anderem bei Transport, Reisen, Unterkunft, Freizeitaktivitäten und Angeboten lokaler Partner.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Die ESNcard wird außerdem für die Teilnahme an vielen Reisen und Aktivitäten benötigt, die von ESN Santiago de Compostela organisiert werden.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Alle verfügbaren Rabatte und Partner findest du auf esncard.org. Die ESNcard kostet 20 € und ist 12 Monate ab dem Ausstellungsdatum gültig.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Fülle das Anmeldeformular aus, um deine ESNcard zu beantragen. Wir geben dir die nötigen Informationen, um sie bei ESN Santiago de Compostela abzuholen.',
+        },
+      ],
+    },
     eventos: { title: 'Veranstaltungen', text: 'Entdecke kommende Aktivitäten, Reisen und Treffen unserer internationalen Gemeinschaft.' },
     blog: {
       title: 'Blog',

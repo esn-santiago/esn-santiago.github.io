@@ -5,6 +5,10 @@ const es: Dictionary = {
     about: 'Qué es ESN',
     tips: 'Erasmus Tips',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'Todos los descuentos',
+    esncardLocalDiscounts: 'Descuentos locales',
+    esncardInternationalDiscounts: 'Descuentos internacionales',
+    esncardTravelDiscounts: 'Descuentos para viajes',
     events: 'Eventos',
     blog: 'Blog',
     contact: 'Contacto',
@@ -103,7 +107,31 @@ const es: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: 'Descubre la ESNcard y todos los beneficios, actividades y descuentos disponibles para ti.' },
+    esncard: {
+      title: 'ESNcard',
+      text: 'Descubre la ESNcard y todos los beneficios, actividades y descuentos disponibles para ti.',
+      cta: 'Pide tu ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: '¿Qué es la ESNcard?' },
+        { type: 'paragraph', text: 'La ESNcard es la tarjeta oficial de socio de Erasmus Student Network.' },
+        {
+          type: 'paragraph',
+          text: 'Da acceso a estudiantes internacionales a una amplia variedad de descuentos y beneficios por toda Europa, incluyendo transporte, viajes, alojamiento, actividades de ocio y ofertas de socios locales.',
+        },
+        {
+          type: 'paragraph',
+          text: 'La ESNcard también es necesaria para participar en muchos de los viajes y actividades organizados por ESN Santiago de Compostela.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Puedes consultar todos los descuentos y socios disponibles en esncard.org. La ESNcard cuesta 20€ y tiene una validez de 12 meses desde la fecha de expedición.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Completa el formulario de inscripción para solicitar tu ESNcard. Te facilitaremos la información necesaria para recogerla en ESN Santiago de Compostela.',
+        },
+      ],
+    },
     eventos: { title: 'Eventos', text: 'Descubre las próximas actividades, viajes y encuentros de nuestra comunidad.' },
     blog: {
       title: 'Blog',

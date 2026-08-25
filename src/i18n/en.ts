@@ -5,6 +5,10 @@ const en: Dictionary = {
     about: 'What is ESN',
     tips: 'Erasmus tips',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'All discounts',
+    esncardLocalDiscounts: 'Local discounts',
+    esncardInternationalDiscounts: 'International discounts',
+    esncardTravelDiscounts: 'Travel discounts',
     events: 'Events',
     blog: 'Blog',
     contact: 'Contact',
@@ -103,7 +107,31 @@ const en: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: 'Find out about the ESNcard and the benefits, activities and discounts available to you.' },
+    esncard: {
+      title: 'ESNcard',
+      text: 'Find out about the ESNcard and the benefits, activities and discounts available to you.',
+      cta: 'Get your ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: 'What is the ESNcard?' },
+        { type: 'paragraph', text: 'The ESNcard is the official membership card of the Erasmus Student Network.' },
+        {
+          type: 'paragraph',
+          text: 'It gives international students access to a wide range of discounts and benefits across Europe, including transportation, travel, accommodation, leisure activities and offers from local partners.',
+        },
+        {
+          type: 'paragraph',
+          text: 'The ESNcard is also required to participate in many trips and activities organized by ESN Santiago de Compostela.',
+        },
+        {
+          type: 'paragraph',
+          text: 'You can find all available discounts and partners on esncard.org. The ESNcard costs €20 and is valid for 12 months from the date of issue.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Complete the registration form to request your ESNcard. We will provide you with the necessary information to collect it from ESN Santiago de Compostela.',
+        },
+      ],
+    },
     eventos: { title: 'Events', text: 'Discover upcoming activities, trips and gatherings with our international community.' },
     blog: {
       title: 'Blog',

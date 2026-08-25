@@ -423,7 +423,7 @@ p {
 
 
 /* =========================================================
-   DROPDOWN — DESCUENTOS
+   DROPDOWN — ESNCARD
    ========================================================= */
 
 .nav-dropdown {
@@ -456,6 +456,7 @@ p {
 }
 
 .nav-dropdown:hover .dropdown-arrow,
+.nav-dropdown:focus-within .dropdown-arrow,
 .nav-dropdown.is-open .dropdown-arrow {
 	transform: rotate(180deg);
 }
@@ -532,6 +533,7 @@ p {
 /* Mostrar dropdown */
 
 .nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
 .nav-dropdown.is-open .nav-dropdown-menu {
 	opacity: 1;
 
@@ -600,6 +602,10 @@ p {
 	color: var(--esn-orange);
 }
 
+.nav-dropdown-menu a:nth-child(4) span {
+	color: var(--esn-green);
+}
+
 .nav-dropdown-menu a:hover {
 	padding-left: 19px;
 
@@ -616,6 +622,10 @@ p {
 
 .nav-dropdown-menu a:nth-child(3):hover {
 	color: var(--esn-orange);
+}
+
+.nav-dropdown-menu a:nth-child(4):hover {
+	color: var(--esn-green);
 }
 /* =========================================================
    MOBILE MENU BUTTON
@@ -731,6 +741,11 @@ p {
 .content-page h1 {
 	margin: 0 0 35px;
 	font-size: clamp(2.75rem, 6vw, 5rem);
+}
+
+.esncard-cta {
+	display: inline-flex;
+	margin-bottom: 40px;
 }
 
 .blog-back-link {
@@ -1151,10 +1166,14 @@ p {
 
 .button-green {
 	background: var(--esn-green);
+	border-color: var(--esn-green);
+	box-shadow: 5px 5px 0 var(--esn-green);
 }
 
 .button-green:hover {
 	background: #5e9d2d;
+	border-color: #5e9d2d;
+	box-shadow: 7px 7px 0 #5e9d2d;
 }
 
 .button-orange {
@@ -1968,22 +1987,31 @@ p {
 		border-bottom: 2px solid #111111;
 	}
 
+	.mobile-menu-group-header {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.mobile-menu-group-header a {
+		flex: 1;
+		border-bottom: 0;
+	}
+
 	.mobile-submenu-trigger {
-		width: 100%;
+		width: auto;
 		min-height: 55px;
-		padding: 12px 10px;
+		padding: 12px 18px;
 
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 
 		border: 0;
 		background: white;
 		font: inherit;
-		font-size: 1.15rem;
+		font-size: 1.3rem;
 		font-weight: 700;
 		text-align: left;
-		text-transform: uppercase;
 		cursor: pointer;
 	}
 

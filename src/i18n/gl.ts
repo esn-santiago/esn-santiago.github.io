@@ -5,6 +5,10 @@ const gl: Dictionary = {
     about: 'Que é ESN',
     tips: 'Consellos Erasmus',
     esncard: 'ESNcard',
+    esncardAllDiscounts: 'Todos os descontos',
+    esncardLocalDiscounts: 'Descontos locais',
+    esncardInternationalDiscounts: 'Descontos internacionais',
+    esncardTravelDiscounts: 'Descontos de viaxes',
     events: 'Eventos',
     blog: 'Blog',
     contact: 'Contacto',
@@ -103,7 +107,31 @@ const gl: Dictionary = {
         },
       ],
     },
-    esncard: { title: 'ESNcard', text: 'Descobre a ESNcard e todos os beneficios, actividades e descontos dispoñibles para ti.' },
+    esncard: {
+      title: 'ESNcard',
+      text: 'Descobre a ESNcard e todos os beneficios, actividades e descontos dispoñibles para ti.',
+      cta: 'Pide a túa ESNcard',
+      body: [
+        { type: 'heading', level: 3, text: 'Que é a ESNcard?' },
+        { type: 'paragraph', text: 'A ESNcard é a tarxeta oficial de socio de Erasmus Student Network.' },
+        {
+          type: 'paragraph',
+          text: 'Dá acceso ao estudantado internacional a unha ampla variedade de descontos e beneficios por toda Europa, incluíndo transporte, viaxes, aloxamento, actividades de lecer e ofertas de socios locais.',
+        },
+        {
+          type: 'paragraph',
+          text: 'A ESNcard tamén é necesaria para participar en moitas das viaxes e actividades organizadas por ESN Santiago de Compostela.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Podes consultar todos os descontos e socios dispoñibles en esncard.org. A ESNcard custa 20€ e ten unha validez de 12 meses desde a data de expedición.',
+        },
+        {
+          type: 'paragraph',
+          text: 'Completa o formulario de inscrición para solicitar a túa ESNcard. Facilitarémosche a información necesaria para recollela en ESN Santiago de Compostela.',
+        },
+      ],
+    },
     eventos: { title: 'Eventos', text: 'Descubre as próximas actividades, viaxes e encontros da nosa comunidade.' },
     blog: {
       title: 'Blog',
