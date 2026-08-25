@@ -733,6 +733,17 @@ p {
 	font-size: clamp(2.75rem, 6vw, 5rem);
 }
 
+.blog-back-link {
+	display: inline-block;
+	margin-bottom: 20px;
+	font-weight: 700;
+	color: var(--esn-blue);
+}
+
+.blog-back-link:hover {
+	text-decoration: underline;
+}
+
 .content-page h1 span {
 	color: var(--esn-blue);
 }
@@ -785,15 +796,32 @@ p {
 }
 
 .blog-post {
+	position: relative;
+
 	padding: 30px;
 	border: 3px solid var(--border);
 	border-radius: 20px;
 	background: white;
 	box-shadow: 6px 6px 0 var(--esn-blue);
+
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease;
 }
 
 .blog-post-pink {
 	box-shadow: 6px 6px 0 var(--esn-pink);
+}
+
+.blog-post:has(.blog-post-title-link:hover),
+.blog-post:has(.blog-post-title-link:focus-visible) {
+	transform: translate(-3px, -3px);
+	box-shadow: 9px 9px 0 var(--esn-blue);
+}
+
+.blog-post-pink:has(.blog-post-title-link:hover),
+.blog-post-pink:has(.blog-post-title-link:focus-visible) {
+	box-shadow: 9px 9px 0 var(--esn-pink);
 }
 
 .blog-post-title-banner {
@@ -841,6 +869,22 @@ p {
 	font-size: 1.8rem;
 }
 
+.blog-post-title-link {
+	transition: color 0.15s ease;
+}
+
+.blog-post-title-link::after {
+	content: '';
+
+	position: absolute;
+	inset: 0;
+}
+
+.blog-post-title-link:hover {
+	color: var(--esn-blue);
+	text-decoration: underline;
+}
+
 .blog-post p {
 	max-width: 100%;
 	margin-bottom: 16px;
@@ -849,6 +893,9 @@ p {
 }
 
 .blog-post-link {
+	position: relative;
+	z-index: 1;
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;

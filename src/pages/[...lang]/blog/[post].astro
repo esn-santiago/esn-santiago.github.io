@@ -1,0 +1,70 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SiteNavigation from '../../../components/SiteNavigation.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import { languageCodes, defaultLang, getDictionary, type LanguageCode, type BlogPost } from '../../../i18n';
+
+export function getStaticPaths() {
+  return languageCodes
+    .filter((code) => code !== defaultLang)
+    .flatMap((code) => {
+      const dict = getDictionary(code);
+      const posts = dict.pages.blog.posts ?? [];
+      return posts
+        .filter((post): post is BlogPost & { slug: string } => Boolean(post.slug))
+        .map((post) => ({ params: { lang: code, post: post.slug }, props: { post } }));
+    });
+}
+
+const { post } = Astro.props as { post: BlogPost };
+const lang = Astro.params.lang as LanguageCode;
+const dict = getDictionary(lang);
+
+const readMoreLabels: Record<LanguageCode, string> = {
+  es: 'Más información →',
+  en: 'Read more →',
+  gl: 'Máis información →',
+  fr: "Plus d'informations →",
+  de: 'Mehr erfahren →',
+  pt: 'Mais informações →',
+  it: 'Maggiori informazioni →',
+};
+
+function parsePostBlocks(text: string) {
+  return text.split('\n\n').map((block) => {
+    const lines = block.split('\n');
+    if (lines.every((line) => line.trim().startsWith('- '))) {
+      return { type: 'list' as const, items: lines.map((line) => line.trim().slice(2)) };
+    }
+    return { type: 'paragraph' as const, text: block };
+  });
+}
+---
+
+<Layout lang={lang} title={`${post.title} — ESN Santiago`}>
+  <SiteNavigation lang={lang} />
+  <main class="site-container content-page">
+    <a href={`/${lang}/blog`} class="blog-back-link">← {dict.nav.blog}</a>
+    <h1>{post.title}</h1>
+    <article class={`blog-post${post.accent === 'pink' ? ' blog-post-pink' : ''}`}>
+      {post.date && <time class="blog-post-date">{post.date}</time>}
+      {parsePostBlocks(post.text).map((block) =>
+        block.type === 'list' ? (
+          <ul>
+            {block.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{block.text}</p>
+        )
+      )}
+      {post.link && (
+        <a class="blog-post-link" href={post.link} target="_blank" rel="noopener noreferrer">
+          {post.linkText ?? readMoreLabels[lang]}
+        </a>
+      )}
+    </article>
+  </main>
+  <SiteFooter lang={lang} />
+</Layout>

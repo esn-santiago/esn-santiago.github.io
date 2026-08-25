@@ -63,7 +63,9 @@ function parsePostBlocks(text: string) {
           <article class={`blog-post${post.accent === 'pink' ? ' blog-post-pink' : ''}`}>
             {post.date && <time class="blog-post-date">{post.date}</time>}
             {post.title && (
-              <h2 class={post.accent === 'pink' ? 'blog-post-title-banner' : undefined}>{post.title}</h2>
+              <h2 class={post.accent === 'pink' ? 'blog-post-title-banner' : undefined}>
+                {post.slug ? <a href={`/blog/${post.slug}`} class="blog-post-title-link">{post.title}</a> : post.title}
+              </h2>
             )}
             {parsePostBlocks(post.text).map((block) =>
               block.type === 'list' ? (

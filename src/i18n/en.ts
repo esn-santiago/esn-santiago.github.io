@@ -110,6 +110,7 @@ const en: Dictionary = {
       text: 'Stories, practical information and inspiration from ESN Santiago.',
       posts: [
         {
+          slug: 'recruitment-2026-2027',
           date: 'August 24, 2026',
           title: "We're opening Recruitment 2026/2027",
           text: "At ESN Santiago de Compostela we are opening our Recruitment 2026/2027 and looking for new people who want to join our youth volunteering community.\n\nBehind every activity, trip, cultural project, social initiative, sports event or Welcome Month there is a team of people working to make sure hundreds of international students find in Santiago something more than a city to study in: a community to feel part of.\n\nBeing part of ESN is also an opportunity to grow, developing projects in areas such as communication, culture, travel, sports, projects or social action. And, above all, to help improve the experience of those who choose Santiago for their mobility.\n\n👉 Do you want to be part of ESN Santiago de Compostela?",

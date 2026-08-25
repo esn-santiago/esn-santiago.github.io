@@ -110,6 +110,7 @@ const pt: Dictionary = {
       text: 'Histórias, informação prática e inspiração da ESN Santiago.',
       posts: [
         {
+          slug: 'recruitment-2026-2027',
           date: '24 de agosto de 2026',
           title: 'Abrimos o Recrutamento 2026/2027',
           text: 'Na ESN Santiago de Compostela abrimos o nosso Recrutamento 2026/2027 e procuramos novas pessoas que queiram fazer parte da nossa comunidade de voluntariado jovem.\n\nPor trás de cada atividade, viagem, projeto cultural, iniciativa social, evento desportivo ou Welcome Month há uma equipa de pessoas que trabalha para que centenas de estudantes internacionais encontrem em Santiago algo mais do que uma cidade onde estudar: uma comunidade da qual se sentir parte.\n\nFazer parte da ESN também é uma oportunidade de crescer, desenvolver projetos em áreas como comunicação, cultura, viagens, desporto, projetos ou ação social. E, sobretudo, contribuir para melhorar a experiência de quem escolhe Santiago para viver a sua mobilidade.\n\n👉 Queres fazer parte da ESN Santiago de Compostela?',

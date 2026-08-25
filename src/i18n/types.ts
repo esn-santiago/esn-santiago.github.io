@@ -90,6 +90,7 @@ export type ContentBlock =
   | { type: 'list'; items: string[] };
 
 export interface BlogPost {
+  slug?: string;
   date?: string;
   title?: string;
   text: string;
