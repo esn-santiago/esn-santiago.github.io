@@ -6,10 +6,6 @@ const en: Dictionary = {
     tips: 'Erasmus tips',
     esncard: 'ESNcard',
     events: 'Events',
-    discounts: 'Discounts',
-    local: 'Local discounts',
-    national: 'National discounts',
-    international: 'International discounts',
     blog: 'Blog',
     contact: 'Contact',
     language: 'Language',
@@ -315,9 +311,6 @@ const en: Dictionary = {
       ],
     },
     'metodos-de-pago': { title: 'Payment methods', text: 'Available payment methods for ESN Santiago de Compostela services.' },
-    'descuentos/locales': { title: 'Local discounts', text: 'Explore offers from local businesses in Santiago de Compostela.' },
-    'descuentos/nacionales': { title: 'National discounts', text: 'Discover ESNcard benefits available across Spain.' },
-    'descuentos/internacionales': { title: 'International discounts', text: 'Explore benefits available to ESNcard holders around Europe.' },
   },
 };
 

@@ -8,20 +8,13 @@ export type PageSlug =
   | 'avisolegal'
   | 'politicaprivacidad'
   | 'TyC'
-  | 'metodos-de-pago'
-  | 'descuentos/locales'
-  | 'descuentos/nacionales'
-  | 'descuentos/internacionales';
+  | 'metodos-de-pago';
 
 export interface NavDict {
   about: string;
   tips: string;
   esncard: string;
   events: string;
-  discounts: string;
-  local: string;
-  national: string;
-  international: string;
   blog: string;
   contact: string;
   language: string;

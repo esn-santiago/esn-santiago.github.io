@@ -1911,6 +1911,10 @@ p {
 		color: var(--esn-orange);
 	}
 
+	.mobile-menu a:nth-child(6):hover {
+		color: var(--esn-pink);
+	}
+
 	.mobile-menu-group {
 		border-bottom: 2px solid #111111;
 	}

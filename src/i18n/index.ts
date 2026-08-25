@@ -36,9 +36,6 @@ export const pageSlugs: PageSlug[] = [
   'politicaprivacidad',
   'TyC',
   'metodos-de-pago',
-  'descuentos/locales',
-  'descuentos/nacionales',
-  'descuentos/internacionales',
 ];
 
 const dictionaries: Record<LanguageCode, Dictionary> = { es, en, gl, fr, de, pt, it };

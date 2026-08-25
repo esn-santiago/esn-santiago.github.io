@@ -28,15 +28,6 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
       <a href={link('esncard')}>{nav.esncard}</a>
       <a href={link('eventos')}>{nav.events}</a>
 
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-trigger" type="button" aria-expanded="false"><span>{nav.discounts}</span></button>
-        <div class="nav-dropdown-menu">
-          <a href={link('descuentos/locales')}><strong>{nav.local}</strong></a>
-          <a href={link('descuentos/nacionales')}><strong>{nav.national}</strong></a>
-          <a href={link('descuentos/internacionales')}><strong>{nav.international}</strong></a>
-        </div>
-      </div>
-
       <a href={link('blog')}>{nav.blog}</a>
       <a href={link('contacto')}>{nav.contact}</a>
 
@@ -58,15 +49,6 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
   <a href={link('esncard')}>{nav.esncard}</a>
   <a href={link('eventos')}>{nav.events}</a>
 
-  <div class="mobile-menu-group">
-    <button class="mobile-submenu-trigger" type="button" aria-expanded="false"><span>{nav.discounts}</span> <span class="mobile-submenu-icon">+</span></button>
-    <div class="mobile-submenu">
-      <a href={link('descuentos/locales')}>{nav.local}</a>
-      <a href={link('descuentos/nacionales')}>{nav.national}</a>
-      <a href={link('descuentos/internacionales')}>{nav.international}</a>
-    </div>
-  </div>
-
   <a href={link('blog')}>{nav.blog}</a>
   <a href={link('contacto')}>{nav.contact}</a>
 
@@ -83,30 +65,6 @@ const languageLink = (code: LanguageCode) => (knownPaths.has(pagePath) ? localiz
     const isOpen = mobileMenu?.classList.toggle('is-open') ?? false;
     menuButton.classList.toggle('is-open', isOpen);
     menuButton.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  const dropdownTrigger = document.querySelector<HTMLButtonElement>('.nav-dropdown-trigger');
-  const dropdown = document.querySelector('.nav-dropdown');
-  dropdownTrigger?.addEventListener('click', () => {
-    const isOpen = dropdown?.classList.toggle('is-open') ?? false;
-    dropdownTrigger.setAttribute('aria-expanded', String(isOpen));
-  });
-  document.addEventListener('click', (event) => {
-    const target = event.target as Node;
-    if (dropdown && !dropdown.contains(target)) {
-      dropdown.classList.remove('is-open');
-      dropdownTrigger?.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  const mobileDiscountsButton = document.querySelector<HTMLButtonElement>('.mobile-submenu-trigger');
-  mobileDiscountsButton?.addEventListener('click', (event) => {
-    const trigger = event.currentTarget as HTMLButtonElement;
-    const submenu = trigger.parentElement?.querySelector('.mobile-submenu');
-    const isOpen = submenu?.classList.toggle('is-open') ?? false;
-    trigger.setAttribute('aria-expanded', String(isOpen));
-    const icon = trigger.querySelector('.mobile-submenu-icon');
-    if (icon) icon.textContent = isOpen ? '−' : '+';
   });
 
   mobileMenu?.querySelectorAll('a').forEach((anchor) => {
