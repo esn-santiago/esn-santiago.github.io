@@ -7,7 +7,7 @@ import pt from './pt';
 import it from './it';
 import type { Dictionary, PageSlug } from './types';
 
-export type { Dictionary, NavDict, HomeDict, PageSlug } from './types';
+export type { Dictionary, NavDict, HomeDict, PageSlug, BlogPost } from './types';
 
 export const languages = {
   es: 'Español',

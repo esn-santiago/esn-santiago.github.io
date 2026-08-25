@@ -13,6 +13,16 @@ const lang = defaultLang;
 const slug = Astro.params.slug as PageSlug;
 const dict = getDictionary(lang);
 const content = dict.pages[slug];
+
+function parsePostBlocks(text: string) {
+  return text.split('\n\n').map((block) => {
+    const lines = block.split('\n');
+    if (lines.every((line) => line.trim().startsWith('- '))) {
+      return { type: 'list' as const, items: lines.map((line) => line.trim().slice(2)) };
+    }
+    return { type: 'paragraph' as const, text: block };
+  });
+}
 ---
 
 <Layout lang={lang} title={`${content.title} — ESN Santiago`}>
@@ -47,6 +57,34 @@ const content = dict.pages[slug];
       />
     )}
     {slug === 'metodos-de-pago' && <PaymentMethods />}
+    {content.posts && (
+      <div class="blog-posts">
+        {content.posts.map((post) => (
+          <article class={`blog-post${post.accent === 'pink' ? ' blog-post-pink' : ''}`}>
+            {post.date && <time class="blog-post-date">{post.date}</time>}
+            {post.title && (
+              <h2 class={post.accent === 'pink' ? 'blog-post-title-banner' : undefined}>{post.title}</h2>
+            )}
+            {parsePostBlocks(post.text).map((block) =>
+              block.type === 'list' ? (
+                <ul>
+                  {block.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{block.text}</p>
+              )
+            )}
+            {post.link && (
+              <a class="blog-post-link" href={post.link} target="_blank" rel="noopener noreferrer">
+                {post.linkText ?? 'Más información →'}
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    )}
   </main>
   <SiteFooter lang={lang} />
 </Layout>

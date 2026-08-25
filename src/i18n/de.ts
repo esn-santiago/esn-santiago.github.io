@@ -74,10 +74,32 @@ const de: Dictionary = {
   },
   pages: {
     'que-es-esn': { title: 'Was ist ESN?', text: 'ESN Santiago unterstützt internationale Studierende und hilft, eine offene Gemeinschaft in Santiago de Compostela aufzubauen.' },
-    'erasmus-tips': { title: 'Erasmus-Tipps', text: 'Nützliche Tipps, um dich einzuleben, die Stadt zu entdecken und das Beste aus deinem Erasmus-Aufenthalt zu machen.' },
+    'erasmus-tips': {
+      title: 'Erasmus-Tipps',
+      text: 'Nützliche Tipps, um dich einzuleben, die Stadt zu entdecken und das Beste aus deinem Erasmus-Aufenthalt zu machen.',
+      posts: [
+        {
+          title: 'Wohnungssuche in Santiago',
+          accent: 'pink',
+          text: 'Für die Wohnungssuche empfehlen wir dir:\n\n- Websites: Idealista, Milanuncios\n- Website der Uni: „taboleiro anuncios USC“\n- Instagram: @salseo_usc (in den hervorgehobenen Stories gibt es einen Link zu einer WhatsApp-Gruppe für Wohnungssuchende)\n- Instagram: @becario.usc (der erste angepinnte Beitrag, in den Kommentaren)\n\nDie üblichen Preise liegen bei etwa 200-350 Euro/Monat, je nach Lage (das Zentrum ist meist teurer als campus norte).\n\nAb Mai gibt es dann mehr Angebote, da die Leute dann anfangen zu entscheiden, ob sie bleiben oder gehen. Und wie immer: Vorsicht vor Betrug (du kannst zum Beispiel um einen Videoanruf bitten, wenn niemand die Wohnung für dich besichtigen kann).\n\nViel Erfolg bei der Suche 🍀',
+        },
+      ],
+    },
     esncard: { title: 'ESNcard', text: 'Erfahre mehr über die ESNcard und alle Vorteile, Aktivitäten und Rabatte, die dir zur Verfügung stehen.' },
     eventos: { title: 'Veranstaltungen', text: 'Entdecke kommende Aktivitäten, Reisen und Treffen unserer internationalen Gemeinschaft.' },
-    blog: { title: 'Blog', text: 'Geschichten, praktische Informationen und Inspiration von ESN Santiago.' },
+    blog: {
+      title: 'Blog',
+      text: 'Geschichten, praktische Informationen und Inspiration von ESN Santiago.',
+      posts: [
+        {
+          date: '24. August 2026',
+          title: 'Wir eröffnen das Recruitment 2026/2027',
+          text: 'Bei ESN Santiago de Compostela eröffnen wir unser Recruitment 2026/2027 und suchen neue Leute, die Teil unserer Jugend-Freiwilligengemeinschaft werden möchten.\n\nHinter jeder Aktivität, Reise, jedem Kulturprojekt, jeder sozialen Initiative, jedem Sportevent oder Welcome Month steht ein Team von Menschen, das dafür sorgt, dass Hunderte internationaler Studierender in Santiago mehr finden als nur eine Stadt zum Studieren: eine Gemeinschaft, zu der man sich zugehörig fühlt.\n\nTeil von ESN zu sein ist auch eine Gelegenheit zu wachsen und Projekte in Bereichen wie Kommunikation, Kultur, Reisen, Sport, Projekte oder soziales Engagement zu entwickeln. Und vor allem dazu beizutragen, die Erfahrung derjenigen zu verbessern, die Santiago für ihre Mobilität wählen.\n\n👉 Möchtest du Teil von ESN Santiago de Compostela werden?',
+          link: 'https://forms.gle/PbjEcRP4oRnAv7SP9',
+          linkText: 'Formular ausfüllen',
+        },
+      ],
+    },
     contacto: { title: 'Kontakt', text: 'Schreib uns, um mitzumachen, zusammenzuarbeiten oder Fragen zu stellen.' },
     avisolegal: {
       title: 'Impressum',

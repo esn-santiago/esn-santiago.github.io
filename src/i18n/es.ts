@@ -74,10 +74,32 @@ const es: Dictionary = {
   },
   pages: {
     'que-es-esn': { title: 'Qué es ESN', text: 'ESN Santiago acompaña a estudiantes internacionales para que su experiencia en Santiago sea más cercana, divertida y conectada.' },
-    'erasmus-tips': { title: 'Erasmus Tips', text: 'Consejos útiles para instalarte, descubrir la ciudad y aprovechar al máximo tu experiencia Erasmus.' },
+    'erasmus-tips': {
+      title: 'Erasmus Tips',
+      text: 'Consejos útiles para instalarte, descubrir la ciudad y aprovechar al máximo tu experiencia Erasmus.',
+      posts: [
+        {
+          title: 'Buscar piso en Santiago',
+          accent: 'pink',
+          text: 'Para buscar piso, te recomendamos:\n\n- Webs: Idealista, Milanuncios\n- Web de la uni: "taboleiro anuncios USC"\n- Instagram: @salseo_usc (en las stories destacadas tiene un link a un grupo de WhatsApp de gente que busca piso)\n- Instagram: @becario.usc (el primer post fijado, en los comentarios)\n\nLos precios normales son sobre unos 200-350 euros/mes, dependiendo de la zona (el centro suele ser más caro que campus norte).\n\nAhora en mayo empezarán a haber más ofertas, ya que es cuando la gente empieza a decidir si se queda o se va. Y como siempre, tened cuidado con las estafas (por ejemplo, podéis pedir videollamada si nadie puede visitarlo por vosotros).\n\nSuerte con la búsqueda 🍀',
+        },
+      ],
+    },
     esncard: { title: 'ESNcard', text: 'Descubre la ESNcard y todos los beneficios, actividades y descuentos disponibles para ti.' },
     eventos: { title: 'Eventos', text: 'Descubre las próximas actividades, viajes y encuentros de nuestra comunidad.' },
-    blog: { title: 'Blog', text: 'Historias, información práctica e inspiración de ESN Santiago.' },
+    blog: {
+      title: 'Blog',
+      text: 'Historias, información práctica e inspiración de ESN Santiago.',
+      posts: [
+        {
+          date: '24 de agosto de 2026',
+          title: 'Abrimos el Recruitment 2026/2027',
+          text: 'En ESN Santiago de Compostela abrimos nuestro Recruitment 2026/2027 y buscamos nuevas personas que quieran formar parte de nuestra comunidad de voluntariado juvenil.\n\nDetrás de cada actividad, viaje, proyecto cultural, iniciativa social, evento deportivo o Welcome Month hay un equipo de personas que trabaja para conseguir que cientos de estudiantes internacionales encuentren en Santiago algo más que una ciudad en la que estudiar: una comunidad de la que sentirse parte.\n\nFormar parte de ESN también es una oportunidad para crecer, desarrollar proyectos en áreas como comunicación, cultura, viajes, deporte, proyectos o acción social. Y, sobre todo, contribuir a mejorar la experiencia de quienes eligen Santiago para vivir su movilidad.\n\n👉 ¿Quieres formar parte de ESN Santiago de Compostela?',
+          link: 'https://forms.gle/PbjEcRP4oRnAv7SP9',
+          linkText: 'Cubre el formulario',
+        },
+      ],
+    },
     contacto: { title: 'Contacto', text: 'Escríbenos para participar, colaborar o resolver cualquier duda.' },
     avisolegal: {
       title: 'Aviso legal',

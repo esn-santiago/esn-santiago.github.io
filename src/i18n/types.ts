@@ -96,8 +96,17 @@ export type ContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'list'; items: string[] };
 
+export interface BlogPost {
+  date?: string;
+  title?: string;
+  text: string;
+  link?: string;
+  linkText?: string;
+  accent?: 'blue' | 'pink';
+}
+
 export interface Dictionary {
   nav: NavDict;
   home: HomeDict;
-  pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[] }>;
+  pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[]; posts?: BlogPost[] }>;
 }

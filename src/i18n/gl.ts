@@ -74,10 +74,32 @@ const gl: Dictionary = {
   },
   pages: {
     'que-es-esn': { title: 'Que é ESN', text: 'ESN Santiago acompaña o estudantado internacional para crear comunidade en Santiago.' },
-    'erasmus-tips': { title: 'Consellos Erasmus', text: 'Consellos útiles para instalarte, descubrir a cidade e aproveitar ao máximo a túa experiencia Erasmus.' },
+    'erasmus-tips': {
+      title: 'Consellos Erasmus',
+      text: 'Consellos útiles para instalarte, descubrir a cidade e aproveitar ao máximo a túa experiencia Erasmus.',
+      posts: [
+        {
+          title: 'Buscar piso en Santiago',
+          accent: 'pink',
+          text: 'Para buscar piso, recomendámosche:\n\n- Webs: Idealista, Milanuncios\n- Web da uni: "taboleiro anuncios USC"\n- Instagram: @salseo_usc (nas historias destacadas ten unha ligazón a un grupo de WhatsApp de xente que busca piso)\n- Instagram: @becario.usc (a primeira publicación fixada, nos comentarios)\n\nOs prezos normais son duns 200-350 euros/mes, dependendo da zona (o centro adoita ser máis caro que campus norte).\n\nAgora en maio empezarán a haber máis ofertas, xa que é cando a xente empeza a decidir se queda ou marcha. E como sempre, tede coidado coas estafas (por exemplo, podedes pedir videochamada se ninguén pode visitalo por vós).\n\nSorte coa busca 🍀',
+        },
+      ],
+    },
     esncard: { title: 'ESNcard', text: 'Descobre a ESNcard e todos os beneficios, actividades e descontos dispoñibles para ti.' },
     eventos: { title: 'Eventos', text: 'Descubre as próximas actividades, viaxes e encontros da nosa comunidade.' },
-    blog: { title: 'Blog', text: 'Historias, información práctica e inspiración de ESN Santiago.' },
+    blog: {
+      title: 'Blog',
+      text: 'Historias, información práctica e inspiración de ESN Santiago.',
+      posts: [
+        {
+          date: '24 de agosto de 2026',
+          title: 'Abrimos o Recrutamento 2026/2027',
+          text: 'En ESN Santiago de Compostela abrimos o noso Recrutamento 2026/2027 e buscamos novas persoas que queiran formar parte da nosa comunidade de voluntariado xuvenil.\n\nDetrás de cada actividade, viaxe, proxecto cultural, iniciativa social, evento deportivo ou Welcome Month hai un equipo de persoas que traballa para conseguir que centos de estudantes internacionais atopen en Santiago algo máis que unha cidade na que estudar: unha comunidade da que sentirse parte.\n\nFormar parte de ESN tamén é unha oportunidade para medrar, desenvolver proxectos en áreas como comunicación, cultura, viaxes, deporte, proxectos ou acción social. E, sobre todo, contribuír a mellorar a experiencia de quen escolle Santiago para vivir a súa mobilidade.\n\n👉 Queres formar parte de ESN Santiago de Compostela?',
+          link: 'https://forms.gle/PbjEcRP4oRnAv7SP9',
+          linkText: 'Cobre o formulario',
+        },
+      ],
+    },
     contacto: { title: 'Contacto', text: 'Escríbenos para participar, colaborar ou resolver calquera dúbida.' },
     avisolegal: {
       title: 'Aviso legal',
