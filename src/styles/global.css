@@ -743,7 +743,11 @@ p {
 	font-size: clamp(2.75rem, 6vw, 5rem);
 }
 
-.esncard-cta {
+.subsection-heading {
+	font-size: clamp(2rem, 4.5vw, 3rem);
+}
+
+.page-cta {
 	display: inline-flex;
 	margin-bottom: 40px;
 }
@@ -1178,10 +1182,14 @@ p {
 
 .button-orange {
 	background: var(--esn-orange);
+	border-color: var(--esn-orange);
+	box-shadow: 5px 5px 0 var(--esn-orange);
 }
 
 .button-orange:hover {
 	background: #d65d0c;
+	border-color: #d65d0c;
+	box-shadow: 7px 7px 0 #d65d0c;
 }
 
 .button-dark {
@@ -1526,8 +1534,7 @@ p {
 	grid-template-columns:
 		120px
 		1fr
-		180px
-		50px;
+		180px;
 
 	align-items: center;
 
@@ -1567,24 +1574,24 @@ p {
 	font-weight: 600;
 }
 
-.event-row:nth-child(4n + 1) .event-date span,
-.event-row:nth-child(4n + 1) .event-category {
-	color: var(--esn-blue);
-}
-
-.event-row:nth-child(4n + 2) .event-date span,
-.event-row:nth-child(4n + 2) .event-category {
-	color: var(--esn-pink);
-}
-
-.event-row:nth-child(4n + 3) .event-date span,
-.event-row:nth-child(4n + 3) .event-category {
+.event-row:has(.cat-social) .event-date span,
+.cat-social {
 	color: var(--esn-green);
 }
 
-.event-row:nth-child(4n + 4) .event-date span,
-.event-row:nth-child(4n + 4) .event-category {
+.event-row:has(.cat-sports) .event-date span,
+.cat-sports {
 	color: var(--esn-orange);
+}
+
+.event-row:has(.cat-cultural) .event-date span,
+.cat-cultural {
+	color: var(--esn-pink);
+}
+
+.event-row:has(.cat-travel) .event-date span,
+.cat-travel {
+	color: var(--esn-blue);
 }
 
 .event-category {
@@ -2108,8 +2115,7 @@ p {
 	.event-row {
 		grid-template-columns:
 			90px
-			1fr
-			40px;
+			1fr;
 	}
 
 	.event-location {
@@ -2310,8 +2316,7 @@ p {
 	.event-row {
 		grid-template-columns:
 			70px
-			1fr
-			35px;
+			1fr;
 
 		gap: 15px;
 

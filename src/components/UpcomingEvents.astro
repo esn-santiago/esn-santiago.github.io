@@ -1,0 +1,26 @@
+---
+import { getDictionary, defaultLang, type LanguageCode } from '../i18n';
+
+const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
+const dict = getDictionary(lang);
+const { heading, items } = dict.home.events;
+---
+
+<section id="upcoming-events" class="section">
+  <div class="events-header">
+    <h2 class="subsection-heading">{heading[0]}<br />{heading[1]}</h2>
+  </div>
+  <div class="events-list">
+    {items.map((item) => (
+      <article class="event-row">
+        <div class="event-date"><span>{item.month}</span><strong>{item.day}</strong></div>
+        <div class="event-info">
+          <span class={`event-category cat-${item.category.toLowerCase()}`}>{item.category}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+        <div class="event-location">📍 {item.location}</div>
+      </article>
+    ))}
+  </div>
+</section>

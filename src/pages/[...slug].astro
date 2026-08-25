@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteNavigation from '../components/SiteNavigation.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PaymentMethods from '../components/PaymentMethods.astro';
+import UpcomingEvents from '../components/UpcomingEvents.astro';
 import { defaultLang, pageSlugs, getDictionary, type PageSlug } from '../i18n';
 
 export function getStaticPaths() {
@@ -30,8 +31,12 @@ function parsePostBlocks(text: string) {
   <main class="site-container content-page">
     <h1>{content.title}</h1>
     <p>{content.text}</p>
+    {slug === 'eventos' && content.cta && (
+      <a href="/events-frame" target="_blank" rel="noopener noreferrer" class="brutalist-button button-orange page-cta">{content.cta}</a>
+    )}
+    {slug === 'eventos' && <UpcomingEvents lang={lang} />}
     {slug === 'esncard' && content.cta && (
-      <a href="/esncard-form" class="brutalist-button button-green esncard-cta">{content.cta}</a>
+      <a href="/esncard-form" class="brutalist-button button-green page-cta">{content.cta}</a>
     )}
     {content.body && (
       <div class="legal-content">

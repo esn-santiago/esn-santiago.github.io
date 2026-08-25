@@ -65,27 +65,6 @@ const path = (slug: string) => `${prefix}/${slug}`;
     </div>
   </section>
 
-  <section id="events" class="section">
-    <div class="events-header">
-      <h2>{home.events.heading[0]}<br />{home.events.heading[1]}</h2>
-      <a href={path('eventos')} class="text-link">{home.events.viewAll}</a>
-    </div>
-    <div class="events-list">
-      {home.events.items.map((item) => (
-        <article class="event-row">
-          <div class="event-date"><span>{item.month}</span><strong>{item.day}</strong></div>
-          <div class="event-info">
-            <span class="event-category">{item.category}</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </div>
-          <div class="event-location">📍 {item.location}</div>
-          <a href={path('eventos')} class="event-arrow" aria-label={item.title}>↗</a>
-        </article>
-      ))}
-    </div>
-  </section>
-
   <section id="join" class="join-section">
     <div class="join-content">
       <h2>{home.join.heading}<br /><strong>{home.join.emphasis}</strong></h2>

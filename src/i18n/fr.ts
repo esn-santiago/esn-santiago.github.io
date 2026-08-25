@@ -45,11 +45,10 @@ const fr: Dictionary = {
     },
     events: {
       heading: ['Prochains', 'événements.'],
-      viewAll: 'Voir tout →',
       items: [
-        { month: 'SEP', day: '01', category: 'WELCOME', title: 'Welcome Event', text: 'Rencontre ESN Santiago et d\'autres étudiants internationaux.', location: 'Santiago' },
-        { month: 'OCT', day: '10', category: 'CULTURE', title: 'Cultural Exchange', text: 'Une expérience pour partager cultures, langues et traditions.', location: 'Santiago' },
-        { month: 'OCT', day: '24', category: 'TRAVEL', title: 'Discover Galicia', text: 'Découvre la Galice avec notre communauté internationale.', location: 'Galicia' },
+        { month: 'SEP', day: '02', category: 'SOCIAL', title: '???', text: '???????', location: 'Lugo' },
+        { month: 'SEP', day: '03', category: 'SPORTS', title: '???', text: '???????', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '04', category: 'SOCIAL', title: '???', text: '???????.', location: 'Santiago de Compostela' },
       ],
     },
     join: {
@@ -132,7 +131,7 @@ const fr: Dictionary = {
         },
       ],
     },
-    eventos: { title: 'Événements', text: 'Découvre les prochaines activités, voyages et rencontres de notre communauté.' },
+    eventos: { title: 'Événements', text: 'Découvre les prochaines activités, voyages et rencontres de notre communauté.', cta: 'Réserver des événements' },
     blog: {
       title: 'Blog',
       text: "Histoires, informations pratiques et inspiration de la part d'ESN Santiago.",

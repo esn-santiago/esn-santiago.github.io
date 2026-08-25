@@ -47,7 +47,6 @@ export interface HomeDict {
   };
   events: {
     heading: [string, string];
-    viewAll: string;
     items: [EventItem, EventItem, EventItem];
   };
   join: {
