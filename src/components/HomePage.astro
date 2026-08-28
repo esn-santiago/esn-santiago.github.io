@@ -1,5 +1,5 @@
 ---
-import { getDictionary, langPrefix, defaultLang, type LanguageCode } from '../i18n';
+import { getDictionary, langPrefix, defaultLang, type LanguageCode, type PageSlug } from '../i18n';
 import SiteFooter from './SiteFooter.astro';
 
 const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
@@ -7,6 +7,14 @@ const dict = getDictionary(lang);
 const { home } = dict;
 const prefix = langPrefix(lang);
 const path = (slug: string) => `${prefix}/${slug}`;
+
+const committeeSlugs: PageSlug[] = [
+  'actividades-deportivas',
+  'actividades-sociales',
+  'actividades-culturales',
+  'fiestas',
+  'viajes',
+];
 ---
 
 <main class="home-container">
@@ -32,8 +40,8 @@ const path = (slug: string) => `${prefix}/${slug}`;
   </section>
 
   <section class="stats">
-    {home.committees.map((committee) => (
-      <div class="stat"><strong>{committee}</strong></div>
+    {home.committees.map((committee, index) => (
+      <a href={path(committeeSlugs[index])} class="stat"><strong>{committee}</strong></a>
     ))}
   </section>
 

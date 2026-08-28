@@ -8,7 +8,12 @@ export type PageSlug =
   | 'avisolegal'
   | 'politicaprivacidad'
   | 'TyC'
-  | 'metodos-de-pago';
+  | 'metodos-de-pago'
+  | 'actividades-deportivas'
+  | 'actividades-sociales'
+  | 'actividades-culturales'
+  | 'fiestas'
+  | 'viajes';
 
 export interface NavDict {
   about: string;
@@ -33,7 +38,7 @@ export interface HomeDict {
   heroText: string;
   heroCtaEvents: string;
   heroCtaAbout: string;
-  committees: [string, string, string, string];
+  committees: [string, string, string, string, string];
   about: {
     heading: [string, string];
     leadBefore: string;

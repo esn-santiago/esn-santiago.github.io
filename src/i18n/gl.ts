@@ -22,9 +22,9 @@ const gl: Dictionary = {
     heroTitle: ['Students', 'Helping', 'Students'],
     heroText:
       'ESN Santiago de Compostela conecta estudantes internacionais e locais a través de experiencias, voluntariado, cultura e comunidade.',
-    heroCtaEvents: 'VER EVENTOS →',
-    heroCtaAbout: 'Coñece ESN →',
-    committees: ['Deportes', 'Social', 'Cultural', 'Viaxes'],
+    heroCtaEvents: 'VER EVENTOS',
+    heroCtaAbout: 'Coñece ESN',
+    committees: ['Deportes', 'Social', 'Cultural', 'Festas', 'Viaxes'],
     about: {
       heading: ['Unha comunidade', 'sen fronteiras.'],
       leadBefore: 'ESN Santiago de Compostela forma parte de ',
@@ -38,9 +38,9 @@ const gl: Dictionary = {
     activities: {
       heading: ['Descubre', 'ESN.'],
       cards: [
-        { icon: '🌍', title: 'International', text: 'Coñece estudantes de todo o mundo e forma parte dunha comunidade internacional en Santiago.', cta: 'Descubrir →', href: 'about' },
-        { icon: '🎉', title: 'Events', text: 'Festas, actividades culturais, deporte, encontros e experiencias para compartir.', cta: 'Ver eventos →', href: 'eventos' },
-        { icon: '🤝', title: 'Volunteering', text: 'Participa como voluntario e axuda a construír unha mellor experiencia Erasmus para todos.', cta: 'Participar →', href: 'contacto' },
+        { icon: '🌍', title: 'International', text: 'Coñece estudantes de todo o mundo e forma parte dunha comunidade internacional en Santiago.', cta: 'Descubrir', href: 'about' },
+        { icon: '🎉', title: 'Events', text: 'Festas, actividades culturais, deporte, encontros e experiencias para compartir.', cta: 'Ver eventos', href: 'eventos' },
+        { icon: '🤝', title: 'Volunteering', text: 'Participa como voluntario e axuda a construír unha mellor experiencia Erasmus para todos.', cta: 'Participar', href: 'contacto' },
       ],
     },
     events: {
@@ -55,7 +55,7 @@ const gl: Dictionary = {
       heading: 'Non sexas',
       emphasis: 'un espectador.',
       text: 'Únete a ESN Santiago. Coñece xente, descubre Galicia, participa en actividades e axuda a outros estudantes internacionais.',
-      cta: 'QUERO PARTICIPAR →',
+      cta: 'QUERO PARTICIPAR',
     },
     contact: {
       heading: 'Falamos?',
@@ -361,6 +361,26 @@ const gl: Dictionary = {
       ],
     },
     'metodos-de-pago': { title: 'Métodos de pago', text: 'Métodos de pago dispoñibles para os servizos de ESN Santiago de Compostela.' },
+    'actividades-deportivas': {
+      title: 'Actividades deportivas',
+      text: 'Deporte, partidos e actividades físicas para manterte activo mentres vives a túa experiencia Erasmus en Santiago.',
+    },
+    'actividades-sociales': {
+      title: 'Actividades sociais',
+      text: 'Encontros e quedadas para coñecer xente nova e formar parte da comunidade.',
+    },
+    'actividades-culturales': {
+      title: 'Actividades culturais',
+      text: 'Visitas, tradicións e actividades para descubrir a cultura de Santiago e Galicia.',
+    },
+    fiestas: {
+      title: 'Festas',
+      text: 'Festas e celebracións para gozar das noites de Santiago coa comunidade ESN.',
+    },
+    viajes: {
+      title: 'Viaxes',
+      text: 'Escapadas e viaxes organizadas para descubrir Galicia, España e máis alá.',
+    },
   },
 };
 

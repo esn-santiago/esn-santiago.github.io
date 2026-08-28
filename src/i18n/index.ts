@@ -36,7 +36,20 @@ export const pageSlugs: PageSlug[] = [
   'politicaprivacidad',
   'TyC',
   'metodos-de-pago',
+  'actividades-deportivas',
+  'actividades-sociales',
+  'actividades-culturales',
+  'fiestas',
+  'viajes',
 ];
+
+export const activityPageColors: Record<string, string> = {
+  'actividades-deportivas': 'var(--esn-orange)',
+  'actividades-sociales': 'var(--esn-green)',
+  'actividades-culturales': 'var(--esn-pink)',
+  fiestas: 'var(--esn-dark-blue)',
+  viajes: 'var(--esn-blue)',
+};
 
 const dictionaries: Record<LanguageCode, Dictionary> = { es, en, gl, fr, de, pt, it };
 

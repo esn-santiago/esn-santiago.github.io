@@ -22,9 +22,9 @@ const fr: Dictionary = {
     heroTitle: ['Students', 'Helping', 'Students'],
     heroText:
       'ESN Santiago de Compostela relie les étudiants internationaux et locaux grâce à des expériences, du bénévolat, de la culture et une communauté.',
-    heroCtaEvents: 'VOIR LES ÉVÉNEMENTS →',
-    heroCtaAbout: 'Découvre ESN →',
-    committees: ['Sport', 'Social', 'Culturel', 'Voyages'],
+    heroCtaEvents: 'VOIR LES ÉVÉNEMENTS',
+    heroCtaAbout: 'Découvre ESN',
+    committees: ['Sport', 'Social', 'Culturel', 'Fêtes', 'Voyages'],
     about: {
       heading: ['Une communauté', 'sans frontières.'],
       leadBefore: "ESN Santiago de Compostela fait partie de l'",
@@ -38,9 +38,9 @@ const fr: Dictionary = {
     activities: {
       heading: ['Découvre', 'ESN.'],
       cards: [
-        { icon: '🌍', title: 'International', text: 'Rencontre des étudiants du monde entier et intègre une communauté internationale à Saint-Jacques-de-Compostelle.', cta: 'Découvrir →', href: 'about' },
-        { icon: '🎉', title: 'Events', text: 'Fêtes, activités culturelles, sport, rencontres et expériences à partager.', cta: 'Voir les événements →', href: 'eventos' },
-        { icon: '🤝', title: 'Volunteering', text: 'Deviens bénévole et aide à construire une meilleure expérience Erasmus pour tous.', cta: 'Participer →', href: 'contacto' },
+        { icon: '🌍', title: 'International', text: 'Rencontre des étudiants du monde entier et intègre une communauté internationale à Saint-Jacques-de-Compostelle.', cta: 'Découvrir', href: 'about' },
+        { icon: '🎉', title: 'Events', text: 'Fêtes, activités culturelles, sport, rencontres et expériences à partager.', cta: 'Voir les événements', href: 'eventos' },
+        { icon: '🤝', title: 'Volunteering', text: 'Deviens bénévole et aide à construire une meilleure expérience Erasmus pour tous.', cta: 'Participer', href: 'contacto' },
       ],
     },
     events: {
@@ -55,7 +55,7 @@ const fr: Dictionary = {
       heading: 'Ne reste pas',
       emphasis: 'spectateur.',
       text: 'Rejoins ESN Santiago. Rencontre des gens, découvre la Galice, participe à des activités et aide d\'autres étudiants internationaux.',
-      cta: 'JE VEUX PARTICIPER →',
+      cta: 'JE VEUX PARTICIPER',
     },
     contact: {
       heading: 'On se parle ?',
@@ -361,6 +361,26 @@ const fr: Dictionary = {
       ],
     },
     'metodos-de-pago': { title: 'Modes de paiement', text: "Modes de paiement disponibles pour les services d'ESN Santiago de Compostela." },
+    'actividades-deportivas': {
+      title: 'Activités sportives',
+      text: 'Sport, matchs et activités physiques pour rester actif pendant ton expérience Erasmus à Saint-Jacques-de-Compostelle.',
+    },
+    'actividades-sociales': {
+      title: 'Activités sociales',
+      text: 'Rencontres et sorties pour rencontrer de nouvelles personnes et faire partie de la communauté.',
+    },
+    'actividades-culturales': {
+      title: 'Activités culturelles',
+      text: 'Visites, traditions et activités pour découvrir la culture de Saint-Jacques-de-Compostelle et de la Galice.',
+    },
+    fiestas: {
+      title: 'Fêtes',
+      text: 'Fêtes et soirées pour profiter de la vie nocturne de Saint-Jacques-de-Compostelle avec la communauté ESN.',
+    },
+    viajes: {
+      title: 'Voyages',
+      text: "Escapades et voyages organisés pour découvrir la Galice, l'Espagne et au-delà.",
+    },
   },
 };
 

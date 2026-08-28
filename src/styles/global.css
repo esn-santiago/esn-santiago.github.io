@@ -30,6 +30,7 @@
 	--esn-pink: #ec008c;
 	--esn-green: #7ac143;
 	--esn-orange: #f47b20;
+	--esn-dark-blue: #2e3192;
 	--esn-color-line: repeating-linear-gradient(
 		to right,
 		var(--esn-blue) 0 8.333%,
@@ -725,6 +726,31 @@ p {
 	padding: 48px 0 120px;
 }
 
+.activity-hero {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+
+	padding: 100px 24px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-align: center;
+}
+
+.activity-hero h1 {
+	margin: 0;
+
+	color: #ffffff;
+	font-size: clamp(1.75rem, 4vw, 3rem);
+	text-transform: uppercase;
+}
+
+.activity-page .content-page {
+	padding-top: 40px;
+}
+
 .content-page h1 {
 	margin: 0 0 35px;
 	font-size: clamp(2.75rem, 6vw, 5rem);
@@ -1251,7 +1277,7 @@ p {
 .stats {
 	display: grid;
 
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 
 	width: 100vw;
 
@@ -1278,21 +1304,31 @@ p {
 	line-height: 1;
 
 	color: #ffffff;
+
+	transition: color 0.2s ease;
 }
 
-.stat:nth-child(4n + 1) {
+.stat:hover strong {
+	color: #111111;
+}
+
+.stat:nth-child(5n + 1) {
 	background: var(--esn-orange);
 }
 
-.stat:nth-child(4n + 2) {
+.stat:nth-child(5n + 2) {
 	background: var(--esn-green);
 }
 
-.stat:nth-child(4n + 3) {
+.stat:nth-child(5n + 3) {
 	background: var(--esn-pink);
 }
 
-.stat:nth-child(4n + 4) {
+.stat:nth-child(5n + 4) {
+	background: var(--esn-dark-blue);
+}
+
+.stat:nth-child(5n + 5) {
 	background: var(--esn-blue);
 }
 

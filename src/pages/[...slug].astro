@@ -4,7 +4,7 @@ import SiteNavigation from '../components/SiteNavigation.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PaymentMethods from '../components/PaymentMethods.astro';
 import UpcomingEvents from '../components/UpcomingEvents.astro';
-import { defaultLang, pageSlugs, getDictionary, type PageSlug } from '../i18n';
+import { defaultLang, pageSlugs, getDictionary, activityPageColors, type PageSlug } from '../i18n';
 
 export function getStaticPaths() {
   return pageSlugs.map((slug) => ({ params: { slug } }));
@@ -14,6 +14,7 @@ const lang = defaultLang;
 const slug = Astro.params.slug as PageSlug;
 const dict = getDictionary(lang);
 const content = dict.pages[slug];
+const activityColor = activityPageColors[slug];
 
 function parsePostBlocks(text: string) {
   return text.split('\n\n').map((block) => {
@@ -28,8 +29,14 @@ function parsePostBlocks(text: string) {
 
 <Layout lang={lang} title={`${content.title} — ESN Santiago`}>
   <SiteNavigation lang={lang} />
-  <main class="site-container content-page">
-    <h1>{content.title}</h1>
+  <main class={activityColor ? 'activity-page' : undefined}>
+    {activityColor && (
+      <div class="activity-hero" style={`background: ${activityColor};`}>
+        <h1>{content.title}</h1>
+      </div>
+    )}
+    <div class="site-container content-page">
+    {!activityColor && <h1>{content.title}</h1>}
     <p>{content.text}</p>
     {slug === 'eventos' && content.cta && (
       <a href="/events-frame" target="_blank" rel="noopener noreferrer" class="brutalist-button button-orange page-cta">{content.cta}</a>
@@ -86,6 +93,7 @@ function parsePostBlocks(text: string) {
         ))}
       </div>
     )}
+    </div>
   </main>
   <SiteFooter lang={lang} />
 </Layout>
