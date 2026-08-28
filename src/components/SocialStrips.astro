@@ -1,0 +1,18 @@
+---
+import { socialIcons, socialLinks } from '../data/socials';
+---
+
+<div class="social-strips">
+  {socialLinks.map((social) => (
+    <a
+      href={social.href}
+      target={social.href.startsWith('http') ? '_blank' : undefined}
+      rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+      class="social-strip"
+      style={`--hover-bg:${social.hoverBg};--hover-color:${social.hoverColor};--hover-border:${social.hoverBorder};`}
+    >
+      <span class="social-strip-icon" set:html={socialIcons[social.name]} />
+      <span class="social-strip-name">{social.name}</span>
+    </a>
+  ))}
+</div>

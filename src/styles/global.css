@@ -765,6 +765,48 @@ p {
 	margin-bottom: 40px;
 }
 
+.social-strips {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+
+	max-width: 640px;
+	margin: 8px 0 40px;
+}
+
+.social-strip {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+
+	width: 100%;
+	padding: 20px 28px;
+
+	border: 3px solid #111111;
+
+	color: #111111;
+	font-weight: 700;
+	font-size: 1.1rem;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+
+	transition: all 0.15s ease;
+}
+
+.social-strip-icon {
+	display: flex;
+	flex-shrink: 0;
+}
+
+.social-strip:hover {
+	background: var(--hover-bg);
+	color: var(--hover-color);
+	border-color: var(--hover-border);
+
+	transform: translate(-4px, -4px);
+	box-shadow: 6px 6px 0 #111111;
+}
+
 .events-month-note {
 	color: var(--esn-pink);
 	font-weight: 600;

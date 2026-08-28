@@ -4,6 +4,7 @@ import SiteNavigation from '../components/SiteNavigation.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PaymentMethods from '../components/PaymentMethods.astro';
 import UpcomingEvents from '../components/UpcomingEvents.astro';
+import SocialStrips from '../components/SocialStrips.astro';
 import { defaultLang, pageSlugs, getDictionary, activityPageColors, whatsappGroupUrl, instagramUrl, type PageSlug } from '../i18n';
 
 export function getStaticPaths() {
@@ -68,6 +69,7 @@ function parsePostBlocks(text: string) {
     {slug === 'esncard' && content.cta && (
       <a href="/esncard-form" class="brutalist-button button-green page-cta">{content.cta}</a>
     )}
+    {slug === 'contacto' && <SocialStrips />}
     {content.body && (
       <div class="legal-content">
         {content.body.map((block) =>
