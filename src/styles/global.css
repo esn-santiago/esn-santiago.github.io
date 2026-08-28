@@ -765,6 +765,42 @@ p {
 	margin-bottom: 40px;
 }
 
+.events-month-note {
+	color: var(--esn-pink);
+	font-weight: 600;
+}
+
+.events-month-note-link {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.city-events-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	align-items: center;
+
+	max-width: 1100px;
+	margin: 0 auto 40px;
+}
+
+.city-events-card {
+	display: block;
+
+	transition: transform 0.15s ease;
+}
+
+.city-events-card:hover {
+	transform: translate(-3px, -3px);
+}
+
+.city-events-card img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .blog-back-link {
 	display: inline-block;
 	margin-bottom: 20px;
@@ -1347,6 +1383,12 @@ p {
 	margin-bottom: 80px;
 }
 
+#upcoming-events {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	border-bottom: none;
+}
+
 .events-header {
 	display: flex;
 
@@ -1556,8 +1598,7 @@ p {
 
 	grid-template-columns:
 		120px
-		1fr
-		180px;
+		1fr;
 
 	align-items: center;
 
@@ -1617,6 +1658,22 @@ p {
 	color: var(--esn-blue);
 }
 
+.event-row:has(.cat-fiestas) .event-date span,
+.cat-fiestas {
+	color: var(--esn-dark-blue);
+}
+
+.event-row:has(.cat-universidad) .event-date span,
+.cat-universidad {
+	color: #111111;
+}
+
+.event-categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 12px;
+}
+
 .event-category {
 	font-size: 0.7rem;
 
@@ -1638,13 +1695,6 @@ p {
 
 	color: #555;
 }
-
-.event-location {
-	font-size: 0.9rem;
-
-	font-weight: 600;
-}
-
 
 /* =========================================================
    JOIN
@@ -2135,14 +2185,14 @@ p {
 		grid-template-columns: 1fr;
 	}
 
+	.city-events-grid {
+		grid-template-columns: 1fr;
+	}
+
 	.event-row {
 		grid-template-columns:
 			90px
 			1fr;
-	}
-
-	.event-location {
-		display: none;
 	}
 
 	.join-section {

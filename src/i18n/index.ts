@@ -41,6 +41,8 @@ export const pageSlugs: PageSlug[] = [
   'actividades-culturales',
   'fiestas',
   'viajes',
+  'eventos-mes-santiago',
+  'eventos-mes-lugo',
 ];
 
 export const activityPageColors: Record<string, string> = {
@@ -50,6 +52,9 @@ export const activityPageColors: Record<string, string> = {
   fiestas: 'var(--esn-dark-blue)',
   viajes: 'var(--esn-blue)',
 };
+
+export const whatsappGroupUrl = 'https://chat.whatsapp.com/DFFD2XizQNKKr7IVWOM9jO?s=cl&p=a&mlu=4';
+export const instagramUrl = 'https://www.instagram.com/esn_santiagodecompostela?igsi=cTc5dDVndzkzMTZ3';
 
 const dictionaries: Record<LanguageCode, Dictionary> = { es, en, gl, fr, de, pt, it };
 

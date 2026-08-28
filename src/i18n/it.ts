@@ -46,9 +46,13 @@ const it: Dictionary = {
     events: {
       heading: ['Prossimi', 'eventi.'],
       items: [
-        { month: 'SEP', day: '02', category: 'SOCIAL', title: '???', text: '???????', location: 'Lugo' },
-        { month: 'SEP', day: '03', category: 'SPORTS', title: '???', text: '???????', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '04', category: 'SOCIAL', title: '???', text: '???????.', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '02', category: 'CULTURAL', title: 'Pre-welcome Tandem', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '03', category: ['SPORTS', 'SOCIAL'], title: 'Mythical Route + Picnic', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '04', category: 'FIESTAS', title: 'Party Games', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '18', category: 'CULTURAL', title: 'Welcome Tandem', location: 'Lugo' },
+        { month: 'SEP', day: '20', category: 'CULTURAL', title: 'Welcome Tour', location: 'Lugo' },
+        { month: 'SEP', day: '25', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
+        { month: 'SEP', day: '26', category: 'UNIVERSIDAD', title: 'Welcome Day USC', location: 'Lugo' },
       ],
     },
     join: {
@@ -381,6 +385,21 @@ const it: Dictionary = {
       title: 'Viaggi',
       text: 'Gite e viaggi organizzati per scoprire la Galizia, la Spagna e non solo.',
     },
+    'eventos-mes-santiago': {
+      title: 'Eventi ESN di settembre a Santiago',
+      text: 'Scopri tutti gli eventi di questo mese a Santiago de Compostela.',
+    },
+    'eventos-mes-lugo': {
+      title: 'Eventi ESN di settembre a Lugo',
+      text: 'Scopri tutti gli eventi di questo mese a Lugo.',
+    },
+  },
+  eventsMonthNote: {
+    before: "*Tieni d'occhio le location di ciascuno sul nostro ",
+    whatsappLabel: 'gruppo WhatsApp',
+    middle: ' e sul nostro ',
+    instagramLabel: 'Instagram',
+    after: '.',
   },
 };
 

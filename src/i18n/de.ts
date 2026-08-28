@@ -46,9 +46,13 @@ const de: Dictionary = {
     events: {
       heading: ['Kommende', 'Veranstaltungen.'],
       items: [
-        { month: 'SEP', day: '02', category: 'SOCIAL', title: '???', text: '???????', location: 'Lugo' },
-        { month: 'SEP', day: '03', category: 'SPORTS', title: '???', text: '???????', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '04', category: 'SOCIAL', title: '???', text: '???????.', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '02', category: 'CULTURAL', title: 'Pre-welcome Tandem', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '03', category: ['SPORTS', 'SOCIAL'], title: 'Mythical Route + Picnic', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '04', category: 'FIESTAS', title: 'Party Games', location: 'Santiago de Compostela' },
+        { month: 'SEP', day: '18', category: 'CULTURAL', title: 'Welcome Tandem', location: 'Lugo' },
+        { month: 'SEP', day: '20', category: 'CULTURAL', title: 'Welcome Tour', location: 'Lugo' },
+        { month: 'SEP', day: '25', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
+        { month: 'SEP', day: '26', category: 'UNIVERSIDAD', title: 'Welcome Day USC', location: 'Lugo' },
       ],
     },
     join: {
@@ -381,6 +385,21 @@ const de: Dictionary = {
       title: 'Reisen',
       text: 'Ausflüge und organisierte Reisen, um Galicien, Spanien und darüber hinaus zu entdecken.',
     },
+    'eventos-mes-santiago': {
+      title: 'ESN-Veranstaltungen im September in Santiago',
+      text: 'Entdecke alle Veranstaltungen diesen Monat in Santiago de Compostela.',
+    },
+    'eventos-mes-lugo': {
+      title: 'ESN-Veranstaltungen im September in Lugo',
+      text: 'Entdecke alle Veranstaltungen diesen Monat in Lugo.',
+    },
+  },
+  eventsMonthNote: {
+    before: '*Achte auf die Orte der einzelnen Veranstaltungen in unserer ',
+    whatsappLabel: 'WhatsApp-Gruppe',
+    middle: ' und auf unserem ',
+    instagramLabel: 'Instagram',
+    after: '.',
   },
 };
 

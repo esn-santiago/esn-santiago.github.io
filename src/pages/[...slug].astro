@@ -4,7 +4,7 @@ import SiteNavigation from '../components/SiteNavigation.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PaymentMethods from '../components/PaymentMethods.astro';
 import UpcomingEvents from '../components/UpcomingEvents.astro';
-import { defaultLang, pageSlugs, getDictionary, activityPageColors, type PageSlug } from '../i18n';
+import { defaultLang, pageSlugs, getDictionary, activityPageColors, whatsappGroupUrl, instagramUrl, type PageSlug } from '../i18n';
 
 export function getStaticPaths() {
   return pageSlugs.map((slug) => ({ params: { slug } }));
@@ -38,10 +38,33 @@ function parsePostBlocks(text: string) {
     <div class="site-container content-page">
     {!activityColor && <h1>{content.title}</h1>}
     <p>{content.text}</p>
+    {(slug === 'eventos-mes-santiago' || slug === 'eventos-mes-lugo') && (
+      <p class="events-month-note">
+        {dict.eventsMonthNote.before}
+        <a href={whatsappGroupUrl} target="_blank" rel="noopener noreferrer" class="events-month-note-link">{dict.eventsMonthNote.whatsappLabel}</a>
+        {dict.eventsMonthNote.middle}
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="events-month-note-link">{dict.eventsMonthNote.instagramLabel}</a>
+        {dict.eventsMonthNote.after}
+      </p>
+    )}
     {slug === 'eventos' && content.cta && (
       <a href="/events-frame" target="_blank" rel="noopener noreferrer" class="brutalist-button button-orange page-cta">{content.cta}</a>
     )}
-    {slug === 'eventos' && <UpcomingEvents lang={lang} />}
+    {slug === 'eventos' && (
+      <div class="city-events-grid">
+        <a href="/eventos-mes-santiago" class="city-events-card">
+          <img src="/events/santiago.jpeg" alt="Eventos del mes en Santiago" loading="lazy" />
+        </a>
+        <a href="/eventos-mes-lugo" class="city-events-card">
+          <img src="/events/lugo.jpeg" alt="Eventos del mes en Lugo" loading="lazy" />
+        </a>
+      </div>
+    )}
+    {slug === 'eventos-mes-santiago' && <UpcomingEvents lang={lang} city="santiago" />}
+    {slug === 'eventos-mes-lugo' && <UpcomingEvents lang={lang} city="lugo" />}
+    {(slug === 'eventos-mes-santiago' || slug === 'eventos-mes-lugo') && dict.pages.eventos.cta && (
+      <a href="/events-frame" target="_blank" rel="noopener noreferrer" class="brutalist-button button-orange page-cta">{dict.pages.eventos.cta}</a>
+    )}
     {slug === 'esncard' && content.cta && (
       <a href="/esncard-form" class="brutalist-button button-green page-cta">{content.cta}</a>
     )}

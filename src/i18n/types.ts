@@ -13,7 +13,9 @@ export type PageSlug =
   | 'actividades-sociales'
   | 'actividades-culturales'
   | 'fiestas'
-  | 'viajes';
+  | 'viajes'
+  | 'eventos-mes-santiago'
+  | 'eventos-mes-lugo';
 
 export interface NavDict {
   about: string;
@@ -52,7 +54,7 @@ export interface HomeDict {
   };
   events: {
     heading: [string, string];
-    items: [EventItem, EventItem, EventItem];
+    items: EventItem[];
   };
   join: {
     heading: string;
@@ -86,9 +88,9 @@ interface Card {
 interface EventItem {
   month: string;
   day: string;
-  category: string;
+  category: string | string[];
   title: string;
-  text: string;
+  text?: string;
   location: string;
 }
 
@@ -107,8 +109,17 @@ export interface BlogPost {
   accent?: 'blue' | 'pink';
 }
 
+export interface EventsMonthNote {
+  before: string;
+  whatsappLabel: string;
+  middle: string;
+  instagramLabel: string;
+  after: string;
+}
+
 export interface Dictionary {
   nav: NavDict;
   home: HomeDict;
   pages: Record<PageSlug, { title: string; text: string; body?: ContentBlock[]; posts?: BlogPost[]; cta?: string }>;
+  eventsMonthNote: EventsMonthNote;
 }

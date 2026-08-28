@@ -1,9 +1,32 @@
 ---
 import { getDictionary, defaultLang, type LanguageCode } from '../i18n';
 
-const { lang = defaultLang } = Astro.props as { lang?: LanguageCode };
+const { lang = defaultLang, city } = Astro.props as { lang?: LanguageCode; city?: 'santiago' | 'lugo' };
 const dict = getDictionary(lang);
-const { heading, items } = dict.home.events;
+const { heading, items: allItems } = dict.home.events;
+const items = city
+  ? allItems.filter((item) => (city === 'santiago' ? item.location.startsWith('Santiago') : item.location === 'Lugo'))
+  : allItems;
+
+const [sports, social, cultural, fiestas] = dict.home.committees;
+
+const universityLabels: Record<LanguageCode, string> = {
+  es: 'Universidad',
+  en: 'University',
+  gl: 'Universidade',
+  fr: 'Université',
+  de: 'Universität',
+  pt: 'Universidade',
+  it: 'Università',
+};
+
+const categoryLabels: Record<string, string> = {
+  sports,
+  social,
+  cultural,
+  fiestas,
+  universidad: universityLabels[lang],
+};
 ---
 
 <section id="upcoming-events" class="section">
@@ -11,16 +34,22 @@ const { heading, items } = dict.home.events;
     <h2 class="subsection-heading">{heading[0]}<br />{heading[1]}</h2>
   </div>
   <div class="events-list">
-    {items.map((item) => (
-      <article class="event-row">
-        <div class="event-date"><span>{item.month}</span><strong>{item.day}</strong></div>
-        <div class="event-info">
-          <span class={`event-category cat-${item.category.toLowerCase()}`}>{item.category}</span>
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
-        </div>
-        <div class="event-location">📍 {item.location}</div>
-      </article>
-    ))}
+    {items.map((item) => {
+      const categories = Array.isArray(item.category) ? item.category : [item.category];
+      return (
+        <article class="event-row">
+          <div class="event-date"><span>{item.month}</span><strong>{item.day}</strong></div>
+          <div class="event-info">
+            <div class="event-categories">
+              {categories.map((category) => {
+                const key = category.toLowerCase();
+                return <span class={`event-category cat-${key}`}>{categoryLabels[key] ?? category}</span>;
+              })}
+            </div>
+            <h3>{item.title}</h3>
+          </div>
+        </article>
+      );
+    })}
   </div>
 </section>
