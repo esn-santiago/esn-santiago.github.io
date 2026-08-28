@@ -59,7 +59,7 @@ const en: Dictionary = {
       heading: 'Do not be',
       emphasis: 'a spectator.',
       text: 'Join ESN Santiago. Meet people, discover Galicia, take part in activities and help other international students.',
-      cta: 'I WANT TO JOIN',
+      cta: 'I WANT TO VOLUNTEER',
     },
     contact: {
       heading: 'Shall we talk?',

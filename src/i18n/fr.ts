@@ -59,7 +59,7 @@ const fr: Dictionary = {
       heading: 'Ne reste pas',
       emphasis: 'spectateur.',
       text: 'Rejoins ESN Santiago. Rencontre des gens, découvre la Galice, participe à des activités et aide d\'autres étudiants internationaux.',
-      cta: 'JE VEUX PARTICIPER',
+      cta: 'JE VEUX DEVENIR BÉNÉVOLE',
     },
     contact: {
       heading: 'On se parle ?',

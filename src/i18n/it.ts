@@ -59,7 +59,7 @@ const it: Dictionary = {
       heading: 'Non essere',
       emphasis: 'uno spettatore.',
       text: 'Unisciti a ESN Santiago. Conosci persone, scopri la Galizia, partecipa alle attività e aiuta altri studenti internazionali.',
-      cta: 'VOGLIO PARTECIPARE',
+      cta: 'VOGLIO ESSERE VOLONTARI@',
     },
     contact: {
       heading: 'Parliamo?',
