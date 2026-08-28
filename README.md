@@ -12,40 +12,45 @@ Sitio web de **ESN Santiago de Compostela**, orientado a estudiantes internacion
 
 Este repositorio contiene el desarrollo del sitio web de **Erasmus Student Network Santiago de Compostela**, una comunidad local dedicada a acompañar a estudiantes internacionales y fomentar el intercambio cultural y la participación universitaria.
 
-La web está diseñada para centralizar:
+La web centraliza:
 
 - 🎓 Información para estudiantes internacionales
-- 📅 Eventos y actividades
-- 🤝 Voluntariado
-- 🌍 Movilidad internacional
-- 🧑‍🤝‍🧑 Comunidad ESN
-- 📍 Información sobre Santiago de Compostela
-- 📸 Actividades y experiencias
-- 📬 Contacto y participación
+- 📅 Eventos y actividades (integrados vía Eventupp)
+- 🪪 Solicitud de la ESNcard
+- 💳 Métodos de pago
+- 🧑‍🤝‍🧑 Comunidad ESN y voluntariado
+- 📍 Consejos y guías sobre Santiago de Compostela (Erasmus tips)
+- 📰 Blog con artículos individuales
+- 📄 Aviso legal, política de privacidad y términos y condiciones
+- 📬 Contacto
 
 ---
 
 ## 🌐 Idiomas
 
-El sitio está preparado para ofrecer contenido en varios idiomas:
+El sitio está disponible en **7 idiomas**, con enrutado por prefijo de idioma (el español, por defecto, no lleva prefijo):
 
-- 🇪🇸 **Español**
-- 🇬🇱 **Galego**
-- 🇬🇧 **English**
+- 🇪🇸 **Español** (`/`)
+- 🇬🇧 **English** (`/en`)
+- 🇬🇱 **Galego** (`/gl`)
+- 🇫🇷 **Français** (`/fr`)
+- 🇩🇪 **Deutsch** (`/de`)
+- 🇵🇹 **Português** (`/pt`)
+- 🇮🇹 **Italiano** (`/it`)
 
-La estructura multilingüe permite adaptar la experiencia a estudiantes locales e internacionales.
+Los diccionarios de cada idioma viven en [src/i18n/](src/i18n/), y las páginas dinámicas `[...lang]` generan cada versión localizada en base a ellos.
 
 ---
 
 ## 🛠️ Tecnologías
 
-El proyecto está construido con tecnologías web modernas:
-
-- [Astro](https://astro.build/) — framework principal
+- [Astro](https://astro.build/) 6 — framework principal (generación estática)
+- [React](https://react.dev/) 19 — componentes interactivos (vía `@astrojs/react`)
 - TypeScript — tipado y lógica
-- HTML5 — estructura
-- CSS — estilos y diseño responsive
-- JavaScript — funcionalidades interactivas
+- [Tailwind CSS](https://tailwindcss.com/) 4 — estilos y diseño responsive
+- [Sharp](https://sharp.pixelplumbing.com/) — optimización de imágenes
+- Prettier (con `prettier-plugin-astro`) — formateo de código
+- pnpm — gestor de paquetes
 - GitHub Actions — automatización del despliegue
 - GitHub Pages — hosting
 
@@ -56,21 +61,32 @@ El proyecto está construido con tecnologías web modernas:
 ```text
 .
 ├── public/
-│   ├── images/
-│   ├── icons/
-│   └── ...
+│   └── payment-methods/
 │
 ├── src/
+│   ├── assets/
 │   ├── components/
+│   │   ├── HomePage.astro
+│   │   ├── PaymentMethods.astro
+│   │   ├── SiteFooter.astro
+│   │   ├── SiteNavigation.astro
+│   │   └── UpcomingEvents.astro
+│   ├── i18n/            # Diccionarios por idioma (es, en, gl, fr, de, pt, it)
 │   ├── layouts/
+│   │   └── Layout.astro
 │   ├── pages/
-│   ├── styles/
-│   └── ...
+│   │   ├── [...lang]/       # Rutas localizadas ([...slug], blog/[post], index)
+│   │   ├── blog/[post].astro
+│   │   ├── esncard-form.astro
+│   │   ├── events-frame.astro
+│   │   └── [...slug].astro
+│   └── styles/
+│       └── global.css
 │
 ├── .github/
 │   └── workflows/
+│       └── deploy.yml
 │
-├── astro.config.mjs
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -82,16 +98,14 @@ El proyecto está construido con tecnologías web modernas:
 
 ### Requisitos
 
-Necesitas tener instalado:
-
-- Node.js
-- npm
+- Node.js `>= 20` (el despliegue usa Node 24)
+- [pnpm](https://pnpm.io/) (gestor de paquetes usado por el proyecto)
 
 Comprueba las versiones:
 
 ```bash
 node --version
-npm --version
+pnpm --version
 ```
 
 ### Instalación
@@ -111,13 +125,13 @@ cd esn-santiago.github.io
 Instala las dependencias:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Inicia el servidor de desarrollo:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 La aplicación estará disponible normalmente en:
@@ -133,29 +147,27 @@ http://localhost:4321
 Para generar la versión de producción:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Para comprobar localmente el resultado:
 
 ```bash
-npm run preview
+pnpm preview
 ```
 
 ---
 
 ## 🌍 Despliegue
 
-El proyecto está preparado para desplegarse mediante **GitHub Pages** y GitHub Actions.
-
-La publicación puede automatizarse mediante:
+El proyecto se despliega automáticamente en **GitHub Pages** mediante GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) en cada push a `main`:
 
 ```text
-git push
+git push a main
     ↓
-GitHub Actions
+GitHub Actions (pnpm install --frozen-lockfile)
     ↓
-Astro build
+pnpm build (Astro)
     ↓
 GitHub Pages
 ```
@@ -169,7 +181,7 @@ El sitio busca ofrecer una experiencia:
 - 📱 Responsive
 - ⚡ Rápida
 - ♿ Accesible
-- 🌍 Multilingüe
+- 🌍 Multilingüe (7 idiomas)
 - 🧭 Fácil de navegar
 - 🎓 Orientada a estudiantes
 - 🤝 Centrada en la comunidad
@@ -186,34 +198,24 @@ La actividad local se desarrolla en **Santiago de Compostela, Galicia, España**
 
 ## 📍 Santiago de Compostela
 
-La web pretende servir también como punto de entrada para estudiantes que llegan a Santiago:
+La web sirve también como punto de entrada para estudiantes que llegan a Santiago:
 
-- Información práctica
-- Actividades culturales
-- Eventos
+- Información práctica (Erasmus tips)
+- Actividades culturales y eventos
 - Comunidad internacional
 - Voluntariado
 - Experiencias Erasmus
 
 ---
 
-## 🔮 Próximas funcionalidades
+## 🔮 Posibles mejoras futuras
 
-Algunas funcionalidades que pueden incorporarse al proyecto:
-
-- [ ] Selector de idioma ES / GL / EN
-- [ ] Calendario de eventos
-- [ ] Página individual para cada evento
-- [ ] Sistema de categorías
+- [ ] Calendario de eventos propio (más allá del iframe de Eventupp)
+- [ ] Sistema de categorías/etiquetas en el blog
 - [ ] Buscador
-- [ ] Integración con redes sociales
 - [ ] Mapa de actividades en Santiago
-- [ ] Formulario de contacto
-- [ ] Sección de voluntariado
 - [ ] Galería de fotografías
-- [ ] Área para estudiantes internacionales
-- [ ] Información sobre actividades ESN
-- [ ] Integración con APIs externas
+- [ ] Integración con redes sociales
 
 ---
 
@@ -246,16 +248,4 @@ y abre un Pull Request.
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo la licencia indicada en el repositorio.
-
----
-
-## 🇪🇺 ESN Santiago de Compostela
-
-**Erasmus Student Network · Santiago de Compostela**
-
-> Connect · Discover · Experience
-
-📍 Santiago de Compostela, Galicia, Spain
-
-🌍 International students · Volunteering · Cultural exchange
+Este proyecto se distribuye bajo licencia [MIT](LICENSE).
