@@ -1,0 +1,183 @@
+/* =========================================================
+   HALLOWEEN
+   Temporary seasonal theme. Remove the `halloween` class
+   from <body> in Layout.astro to switch it off.
+   ========================================================= */
+
+body:not(.halloween) .halloween-only {
+	display: none;
+}
+
+body.halloween {
+	--halloween-night: #1d1b4f;
+	--halloween-moon: #ffd8a1;
+}
+
+body.halloween ::selection {
+	background: var(--esn-orange);
+}
+
+
+/* ---------- HERO ---------- */
+
+body.halloween .hero-highlight {
+	position: relative;
+
+	overflow: hidden;
+
+	background:
+		radial-gradient(circle at 84% 22%, var(--halloween-moon) 0 70px, rgba(255, 216, 161, 0.25) 72px, transparent 160px),
+		linear-gradient(165deg, var(--halloween-night) 0%, var(--esn-dark-blue) 45%, var(--esn-blue) 100%);
+}
+
+body.halloween .hero-highlight-inner {
+	position: relative;
+
+	z-index: 2;
+}
+
+body.halloween .hero-highlight h1 span {
+	color: var(--esn-orange);
+}
+
+body.halloween .hero-highlight .hero-dot {
+	background: var(--esn-orange);
+}
+
+body.halloween .hero-labels::after {
+	content: '🎃 HAPPY HALLOWEEN';
+
+	font-size: 0.8rem;
+
+	font-weight: 700;
+
+	letter-spacing: 0.12em;
+
+	color: var(--halloween-moon);
+}
+
+html:lang(gl) body.halloween .hero-labels::after {
+	content: '🎃 FELIZ SAMAÍN';
+}
+
+
+/* ---------- BATS ---------- */
+
+.halloween-bats {
+	position: absolute;
+
+	inset: 0;
+
+	z-index: 1;
+
+	pointer-events: none;
+}
+
+.halloween-bat {
+	position: absolute;
+
+	fill: #07061a;
+
+	filter: drop-shadow(0 0 6px rgba(255, 216, 161, 0.45));
+
+	animation: halloween-flap 1.8s ease-in-out infinite;
+}
+
+.halloween-bat:nth-child(2) {
+	top: 12%;
+	right: 22%;
+
+	width: 70px;
+}
+
+.halloween-bat:nth-child(3) {
+	top: 30%;
+	right: 8%;
+
+	width: 46px;
+
+	animation-delay: -0.6s;
+}
+
+.halloween-bat:nth-child(4) {
+	top: 8%;
+	right: 4%;
+
+	width: 32px;
+
+	animation-delay: -1.2s;
+}
+
+@keyframes halloween-flap {
+	0%,
+	100% {
+		transform: translateY(0) scaleY(1);
+	}
+
+	50% {
+		transform: translateY(-10px) scaleY(0.75);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.halloween-bat {
+		animation: none;
+	}
+}
+
+
+/* ---------- JOIN (cobweb) ---------- */
+
+body.halloween .join-section::before {
+	content: '';
+
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	z-index: 1;
+
+	width: 220px;
+	height: 220px;
+
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M0 0L200 0M0 0L190 70M0 0L140 140M0 0L70 190M0 0L0 200'/%3E%3Cpath d='M40 0Q34 10 37 15Q28 22 28 28Q20 30 14 37Q8 36 0 40'/%3E%3Cpath d='M90 0Q78 22 84 33Q64 50 64 64Q44 68 33 84Q20 80 0 90'/%3E%3Cpath d='M145 0Q128 34 135 52Q104 78 103 103Q76 106 52 135Q32 128 0 145'/%3E%3C/svg%3E") no-repeat top left / contain;
+
+	opacity: 0.18;
+
+	pointer-events: none;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+	body.halloween .hero-highlight {
+		background:
+			radial-gradient(circle at 88% 10%, var(--halloween-moon) 0 40px, rgba(255, 216, 161, 0.25) 42px, transparent 100px),
+			linear-gradient(165deg, var(--halloween-night) 0%, var(--esn-dark-blue) 45%, var(--esn-blue) 100%);
+	}
+
+	.halloween-bat:nth-child(2) {
+		top: 4%;
+		right: 30%;
+
+		width: 44px;
+	}
+
+	.halloween-bat:nth-child(3) {
+		top: 16%;
+		right: 4%;
+
+		width: 30px;
+	}
+
+	.halloween-bat:nth-child(4) {
+		display: none;
+	}
+
+	body.halloween .join-section::before {
+		width: 140px;
+		height: 140px;
+	}
+}
