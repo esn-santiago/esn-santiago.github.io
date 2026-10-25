@@ -46,13 +46,13 @@ const fr: Dictionary = {
     events: {
       heading: ['Prochains', 'événements.'],
       items: [
-        { month: 'SEP', day: '02', category: 'CULTURAL', title: 'Pre-welcome Tandem', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '03', category: ['SPORTS', 'SOCIAL'], title: 'Mythical Route + Picnic', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '04', category: 'FIESTAS', title: 'Party Games', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '18', category: 'CULTURAL', title: 'Welcome Tandem', location: 'Lugo' },
-        { month: 'SEP', day: '20', category: 'CULTURAL', title: 'Welcome Tour', location: 'Lugo' },
-        { month: 'SEP', day: '25', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
-        { month: 'SEP', day: '26', category: 'UNIVERSIDAD', title: 'Welcome Day USC', location: 'Lugo' },
+        { month: 'OCT', day: '26', category: 'SPORTS', title: 'Baile Contemporáneo', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '27', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '28', category: 'FIESTAS', title: 'Halloween Party', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '30', category: 'SOCIAL', title: 'Halloween Movie', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '28', category: 'SOCIAL', title: 'Paint your Meiga', location: 'Lugo' },
+        { month: 'OCT', day: '29', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Lugo' },
+        { month: 'OCT', day: '30', category: 'FIESTAS', title: 'Halloween Party', location: 'Lugo' },
       ],
     },
     join: {
@@ -386,11 +386,11 @@ const fr: Dictionary = {
       text: "Escapades et voyages organisés pour découvrir la Galice, l'Espagne et au-delà.",
     },
     'eventos-mes-santiago': {
-      title: "Événements ESN de septembre à Saint-Jacques-de-Compostelle",
+      title: "Événements ESN d'octobre à Saint-Jacques-de-Compostelle",
       text: 'Découvre tous les événements de ce mois-ci à Saint-Jacques-de-Compostelle.',
     },
     'eventos-mes-lugo': {
-      title: 'Événements ESN de septembre à Lugo',
+      title: "Événements ESN d'octobre à Lugo",
       text: 'Découvre tous les événements de ce mois-ci à Lugo.',
     },
   },

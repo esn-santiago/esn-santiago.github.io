@@ -46,13 +46,13 @@ const it: Dictionary = {
     events: {
       heading: ['Prossimi', 'eventi.'],
       items: [
-        { month: 'SEP', day: '02', category: 'CULTURAL', title: 'Pre-welcome Tandem', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '03', category: ['SPORTS', 'SOCIAL'], title: 'Mythical Route + Picnic', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '04', category: 'FIESTAS', title: 'Party Games', location: 'Santiago de Compostela' },
-        { month: 'SEP', day: '18', category: 'CULTURAL', title: 'Welcome Tandem', location: 'Lugo' },
-        { month: 'SEP', day: '20', category: 'CULTURAL', title: 'Welcome Tour', location: 'Lugo' },
-        { month: 'SEP', day: '25', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
-        { month: 'SEP', day: '26', category: 'UNIVERSIDAD', title: 'Welcome Day USC', location: 'Lugo' },
+        { month: 'OCT', day: '26', category: 'SPORTS', title: 'Baile Contemporáneo', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '27', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '28', category: 'FIESTAS', title: 'Halloween Party', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '30', category: 'SOCIAL', title: 'Halloween Movie', location: 'Santiago de Compostela' },
+        { month: 'OCT', day: '28', category: 'SOCIAL', title: 'Paint your Meiga', location: 'Lugo' },
+        { month: 'OCT', day: '29', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Lugo' },
+        { month: 'OCT', day: '30', category: 'FIESTAS', title: 'Halloween Party', location: 'Lugo' },
       ],
     },
     join: {
@@ -386,11 +386,11 @@ const it: Dictionary = {
       text: 'Gite e viaggi organizzati per scoprire la Galizia, la Spagna e non solo.',
     },
     'eventos-mes-santiago': {
-      title: 'Eventi ESN di settembre a Santiago',
+      title: 'Eventi ESN di ottobre a Santiago',
       text: 'Scopri tutti gli eventi di questo mese a Santiago de Compostela.',
     },
     'eventos-mes-lugo': {
-      title: 'Eventi ESN di settembre a Lugo',
+      title: 'Eventi ESN di ottobre a Lugo',
       text: 'Scopri tutti gli eventi di questo mese a Lugo.',
     },
   },
