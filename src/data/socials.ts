@@ -12,7 +12,7 @@ export const socialIcons = {
 
 export const socialLinks = [
   { name: 'WhatsApp', href: whatsappGroupUrl, hoverBg: '#25D366', hoverColor: '#fff', hoverBorder: 'transparent' },
-  { name: 'Flickr', href: 'https://www.flickr.com/photos/people/esnsantiago/', hoverBg: 'linear-gradient(135deg,#ff0084 50%,#0063dc 50%)', hoverColor: '#fff', hoverBorder: 'transparent' },
+  { name: 'Flickr', href: 'https://flic.kr/ps/47sSAy', hoverBg: 'linear-gradient(135deg,#ff0084 50%,#0063dc 50%)', hoverColor: '#fff', hoverBorder: 'transparent' },
   { name: 'Instagram', href: 'https://www.instagram.com/esn_santiagodecompostela/?hl=es', hoverBg: 'linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%)', hoverColor: '#ffffff', hoverBorder: 'transparent' },
   { name: 'Facebook', href: 'https://www.facebook.com/esnsantiagodecompostela/', hoverBg: '#1877F2', hoverColor: '#fff', hoverBorder: 'transparent' },
   { name: 'X', href: 'https://x.com/esn_santiago', hoverBg: '#000000', hoverColor: '#ffffff', hoverBorder: 'transparent' },
