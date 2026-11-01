@@ -46,13 +46,15 @@ const gl: Dictionary = {
     events: {
       heading: ['Próximos', 'eventos.'],
       items: [
-        { month: 'OCT', day: '26', category: 'SPORTS', title: 'Baile Contemporáneo', location: 'Santiago de Compostela' },
-        { month: 'OCT', day: '27', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Santiago de Compostela' },
-        { month: 'OCT', day: '28', category: 'FIESTAS', title: 'Halloween Party', location: 'Santiago de Compostela' },
-        { month: 'OCT', day: '30', category: 'SOCIAL', title: 'Halloween Movie', location: 'Santiago de Compostela' },
-        { month: 'OCT', day: '28', category: 'SOCIAL', title: 'Paint your Meiga', location: 'Lugo' },
-        { month: 'OCT', day: '29', category: 'CULTURAL', title: 'Samaín Tandem', location: 'Lugo' },
-        { month: 'OCT', day: '30', category: 'FIESTAS', title: 'Halloween Party', location: 'Lugo' },
+        { month: 'NOV', day: '3', category: 'CULTURAL', title: 'Game Night Tandem', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '4', category: 'SOCIAL', title: 'Leaves Painting', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '5', category: 'SPORTS', title: 'Pool', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '7', category: 'FIESTAS', title: 'Ibizenca Party', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '4', category: ['SPORTS', 'SOCIAL'], title: 'Surprise Activity', location: 'Lugo' },
+        { month: 'NOV', day: '12', category: 'SOCIAL', title: 'ClayDay', location: 'Lugo' },
+        { month: 'NOV', day: '17', category: 'FIESTAS', title: 'Chat & Drink', location: 'Lugo' },
+        { month: 'NOV', day: '20', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
+        { month: 'NOV', day: '28', category: 'SPORTS', title: 'Gymkhana', location: 'Lugo' },
       ],
     },
     join: {
@@ -386,11 +388,11 @@ const gl: Dictionary = {
       text: 'Escapadas e viaxes organizadas para descubrir Galicia, España e máis alá.',
     },
     'eventos-mes-santiago': {
-      title: 'Eventos ESN de outubro en Santiago',
+      title: 'Eventos ESN de novembro en Santiago',
       text: 'Consulta todos os eventos deste mes en Santiago de Compostela.',
     },
     'eventos-mes-lugo': {
-      title: 'Eventos ESN de outubro en Lugo',
+      title: 'Eventos ESN de novembro en Lugo',
       text: 'Consulta todos os eventos deste mes en Lugo.',
     },
   },
