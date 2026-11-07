@@ -46,11 +46,13 @@ const pt: Dictionary = {
     events: {
       heading: ['Próximos', 'eventos.'],
       items: [
-        { month: 'NOV', day: '3', category: 'CULTURAL', title: 'Game Night Tandem', location: 'Santiago de Compostela' },
-        { month: 'NOV', day: '4', category: 'SOCIAL', title: 'Leaves Painting', location: 'Santiago de Compostela' },
-        { month: 'NOV', day: '5', category: 'SPORTS', title: 'Pool', location: 'Santiago de Compostela' },
-        { month: 'NOV', day: '7', category: 'FIESTAS', title: 'Ibizenca Party', location: 'Santiago de Compostela' },
-        { month: 'NOV', day: '4', category: ['SPORTS', 'SOCIAL'], title: 'Surprise Activity', location: 'Lugo' },
+        { month: 'NOV', day: '9', category: 'SPORTS', title: 'Voley', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '10', category: 'CULTURAL', title: 'Magosto Tandem', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '11', category: 'FIESTAS', title: 'Kapital', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '12', category: 'SOCIAL', title: 'Eating Disorders Awareness', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '13', category: 'FIESTAS', title: 'Friway', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '14', category: 'SPORTS', title: 'Zumba', location: 'Santiago de Compostela' },
+        { month: 'NOV', day: '15', category: ['SPORTS', 'SOCIAL'], title: 'EcoHiking', location: 'Santiago de Compostela' },
         { month: 'NOV', day: '12', category: 'SOCIAL', title: 'ClayDay', location: 'Lugo' },
         { month: 'NOV', day: '17', category: 'FIESTAS', title: 'Chat & Drink', location: 'Lugo' },
         { month: 'NOV', day: '20', category: 'FIESTAS', title: 'Karaoke Night', location: 'Lugo' },
